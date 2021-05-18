@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         maklerB.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 //Code here executes after pressing button
-                //setContentView(R.layout.makler);
+                setContentView(R.layout.activity_ma_nav);
             }
         });
 
