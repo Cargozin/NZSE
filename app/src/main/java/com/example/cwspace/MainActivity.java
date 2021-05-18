@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         coworkerB.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 //Code here executes after pressing button
-                //setContentView(R.layout.activity_main);
+                setContentView(R.layout.activity_cw_nav);
             }
         });
 
