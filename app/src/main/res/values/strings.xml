@@ -5,5 +5,9 @@
     <string name="title_cwsearch">Dashboard</string>
     <string name="title_cwstats">Notifications</string>
 
+    <string name="title_coworker">CoWorker</string>
+    <string name="title_makler">Makler</string>
+    <string name="title_anmelden">Anmelden</string>
+    <string name="title_startup">CoWorkerSpace</string>
 
 </resources>
