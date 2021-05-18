@@ -1,16 +1,16 @@
-package com.example.cwspace.ui.home;
+package com.example.cwspace.ui.cw_home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class CWHomeViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public CWHomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is cwhome fragment");
     }
 
     public LiveData<String> getText() {

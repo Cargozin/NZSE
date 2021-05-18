@@ -12,22 +12,22 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.cwspace.databinding.FragmentCWSearchBinding;
+import com.example.cwspace.databinding.FragmentCwsearchBinding;
 
 public class CWSearchFragment extends Fragment {
 
     private CWSearchViewModel searchViewModel;
-    private FragmentCWSearchBinding binding;
+    private FragmentCwsearchBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         searchViewModel =
                 new ViewModelProvider(this).get(CWSearchViewModel.class);
 
-        binding = FragmentCWSearchBinding.inflate(inflater, container, false);
+        binding = FragmentCwsearchBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSearch;
+        final TextView textView = binding.textCwsearch;
         searchViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

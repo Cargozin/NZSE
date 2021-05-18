@@ -1,4 +1,4 @@
-package com.example.cwspace.ui.home;
+package com.example.cwspace.ui.cw_stats;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.cwspace.R;
-import com.example.cwspace.databinding.FragmentHomeBinding;
+import com.example.cwspace.databinding.FragmentCwstatsBinding;
 
-public class HomeFragment extends Fragment {
+public class CWStatsFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+    private CWStatsViewModel statsViewModel;
+    private FragmentCwstatsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        statsViewModel =
+                new ViewModelProvider(this).get(CWStatsViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentCwstatsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textCwstats;
+        statsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

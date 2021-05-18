@@ -1,4 +1,4 @@
-package com.example.cwspace.ui.notifications;
+package com.example.cwspace.ui.cw_home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.cwspace.R;
-import com.example.cwspace.databinding.FragmentNotificationsBinding;
+import com.example.cwspace.databinding.FragmentCwhomeBinding;
 
-public class NotificationsFragment extends Fragment {
+public class CWHomeFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
-    private FragmentNotificationsBinding binding;
+    private CWHomeViewModel homeViewModel;
+    private FragmentCwhomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        homeViewModel =
+                new ViewModelProvider(this).get(CWHomeViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentCwhomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textCwhome;
+        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

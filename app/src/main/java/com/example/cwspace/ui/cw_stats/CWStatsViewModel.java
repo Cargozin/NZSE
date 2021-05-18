@@ -1,16 +1,16 @@
-package com.example.cwspace.ui.notifications;
+package com.example.cwspace.ui.cw_stats;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class CWStatsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public CWStatsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is cwstats fragment");
     }
 
     public LiveData<String> getText() {
