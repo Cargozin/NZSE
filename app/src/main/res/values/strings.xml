@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">cwspace</string>
+    <string name="title_activity_cw_nav">MainActivity</string>
+    <string name="title_cwhome">Home</string>
+    <string name="title_cwsearch">Dashboard</string>
+    <string name="title_cwstats">Notifications</string>
+
+
 </resources>
