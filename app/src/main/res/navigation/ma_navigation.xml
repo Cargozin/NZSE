@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ma_navigation"
+    app:startDestination="@+id/navigation_mahome">
+
+    <fragment
+        android:id="@+id/navigation_mahome"
+        android:name="com.example.cwspace.ui.ma_home.MAHomeFragment"
+        android:label="@string/title_mahome"
+        tools:layout="@layout/fragment_mahome" />
+
+    <fragment
+        android:id="@+id/navigation_maroom"
+        android:name="com.example.cwspace.ui.ma_room.MARoomFragment"
+        android:label="@string/title_maroom"
+        tools:layout="@layout/fragment_maroom" />
+
+    <fragment
+        android:id="@+id/navigation_mastats"
+        android:name="com.example.cwspace.ui.ma_stats.MAStatsFragment"
+        android:label="@string/title_mastats"
+        tools:layout="@layout/fragment_mastats" />
+</navigation>
