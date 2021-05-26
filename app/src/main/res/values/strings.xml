@@ -8,4 +8,8 @@
     <string name="title_startup">Willkommen!</string>
 
     <string name="title_cwsearchinput">Raumname/-nummer</string>
+
+    <string name="numSeatsTxt">Nummer an Sitzen</string>
+    <string name="nametxt">Name</string>
+    <string name="save">Save</string>
 </resources>
