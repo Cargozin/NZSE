@@ -22,5 +22,6 @@
     <string name="unbooktxt">Freigeben</string>
     <string name="edittxt">Bearbeiten</string>
     <string name="deletetxt">Löschen</string>
+    <string name="stats_roomstxt">Beliebte Räume</string>
 
 </resources>

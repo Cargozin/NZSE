@@ -17,4 +17,5 @@
     <string name="unbooktxt">release</string>
     <string name="edittxt">edit</string>
     <string name="deletetxt">delete</string>
+    <string name="stats_roomstxt">popular rooms</string>
 </resources>

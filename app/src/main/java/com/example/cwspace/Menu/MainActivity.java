@@ -6,7 +6,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.cwspace.Menu.CoWorker;
 import com.example.cwspace.R;
 
 public class MainActivity extends AppCompatActivity {
