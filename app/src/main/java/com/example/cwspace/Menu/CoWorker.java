@@ -1,15 +1,15 @@
-package com.example.cwspace;
+package com.example.cwspace.Menu;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
+import com.example.cwspace.Menu.HomeFragment;
+import com.example.cwspace.Menu.SearchFragment;
+import com.example.cwspace.Menu.StatisticsFragment;
+import com.example.cwspace.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.jetbrains.annotations.NotNull;
 
 public class CoWorker extends AppCompatActivity {
 
