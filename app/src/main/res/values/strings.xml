@@ -7,4 +7,5 @@
     <string name="title_anmelden">Anmelden</string>
     <string name="title_startup">Willkommen!</string>
 
+    <string name="title_cwsearchinput">Raumname/-nummer</string>
 </resources>
