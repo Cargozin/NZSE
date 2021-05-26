@@ -1,14 +1,6 @@
 <resources>
     <string name="app_name">CoWorkerSpace</string>
     <string name="title_activity_cw_nav">cw nav act</string>
-    <string name="title_cwhome">Home</string>
-    <string name="title_cwsearch">Search</string>
-    <string name="title_cwstats">Stats</string>
-
-    <string name="title_activity_ma_nav">ma nav act</string>
-    <string name="title_mahome">Home</string>
-    <string name="title_maroom">Room</string>
-    <string name="title_mastats">Stats</string>
 
     <string name="title_coworker">CoWorker</string>
     <string name="title_makler">Makler</string>
