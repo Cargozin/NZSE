@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CoWorkerSpace</string>
+    <string name="title_anmelden">Login</string>
+    <string name="title_startup">Welcome</string>
+    <string name="title_cwsearchinput">Roomname/-number</string>
+    <string name="allrooms">All rooms</string>
+    <string name="numSeatsTxt">number of seats</string>
+    <string name="nametxt">name</string>
+    <string name="save">save</string>
+    <string name="booked_rooms">booked rooms</string>
+    <string name="favorites">favorites</string>
+</resources>

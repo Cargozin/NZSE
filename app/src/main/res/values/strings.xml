@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">CoWorkerSpace</string>
-    <string name="title_activity_cw_nav">cw nav act</string>
 
-    <string name="title_coworker">CoWorker</string>
-    <string name="title_makler">Makler</string>
+    <string name="title_coworker" translatable="false">CoWorker</string>
+    <string name="title_makler" translatable="false">Makler</string>
     <string name="title_anmelden">Anmelden</string>
     <string name="title_startup">Willkommen!</string>
 
@@ -14,4 +13,7 @@
     <string name="numSeatsTxt">Nummer an Sitzen</string>
     <string name="nametxt">Name</string>
     <string name="save">Save</string>
+    <string name="booked_rooms">Gebuchte Räume</string>
+    <string name="favorites">Favoriten</string>
+
 </resources>
