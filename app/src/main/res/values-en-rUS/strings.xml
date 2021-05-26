@@ -5,9 +5,16 @@
     <string name="title_startup">Welcome</string>
     <string name="title_cwsearchinput">Roomname/-number</string>
     <string name="allrooms">All rooms</string>
-    <string name="numSeatsTxt">number of seats</string>
-    <string name="nametxt">name</string>
+    <string name="numSeatsTxt">number of seats:</string>
+    <string name="nametxt">name:</string>
     <string name="save">save</string>
     <string name="booked_rooms">booked rooms</string>
     <string name="favorites">favorites</string>
+    <string name="offered_roomstxt">Offered rooms</string>
+    <string name="adresstxt">adress:</string>
+    <string name="imagestxt">images:</string>
+    <string name="bookingtxt">book</string>
+    <string name="unbooktxt">release</string>
+    <string name="edittxt">edit</string>
+    <string name="deletetxt">delete</string>
 </resources>

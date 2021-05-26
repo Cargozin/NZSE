@@ -10,10 +10,17 @@
 
     <string name="allrooms">Alle Räume</string>
 
-    <string name="numSeatsTxt">Nummer an Sitzen</string>
-    <string name="nametxt">Name</string>
+    <string name="numSeatsTxt">Anzahl an Sitzplätzen:</string>
+    <string name="nametxt">Name:</string>
     <string name="save">Save</string>
     <string name="booked_rooms">Gebuchte Räume</string>
     <string name="favorites">Favoriten</string>
+    <string name="offered_roomstxt">Angebotene Räume</string>
+    <string name="adresstxt">Adresse:</string>
+    <string name="imagestxt">Bilder:</string>
+    <string name="bookingtxt">Buchen</string>
+    <string name="unbooktxt">Freigeben</string>
+    <string name="edittxt">Bearbeiten</string>
+    <string name="deletetxt">Löschen</string>
 
 </resources>
