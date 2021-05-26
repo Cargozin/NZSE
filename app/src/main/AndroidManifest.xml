@@ -15,6 +15,10 @@
             android:label="CoWorker"
             android:parentActivityName=".Menu.MainActivity"/>
         <activity
+            android:name=".Menu.Makler"
+            android:label="Makler"
+            android:parentActivityName=".Menu.MainActivity"/>
+        <activity
             android:name=".Menu.MainActivity">
             <intent-filter>
                 <action

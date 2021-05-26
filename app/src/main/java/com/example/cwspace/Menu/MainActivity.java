@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void maClicked(View view){
-        //Intent intent = new Intent(this, makler.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, Makler.class);
+        startActivity(intent);
     }
 
 }
