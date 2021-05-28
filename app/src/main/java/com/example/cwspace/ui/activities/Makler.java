@@ -1,14 +1,14 @@
-package com.example.cwspace.Menu;
+package com.example.cwspace.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import com.example.cwspace.Menu.MaHomeFragment;
-import com.example.cwspace.Menu.AddFragment;
-import com.example.cwspace.Menu.MaStatsFragment;
 import com.example.cwspace.R;
+import com.example.cwspace.ui.MaklerPackage.MaAddFragment;
+import com.example.cwspace.ui.MaklerPackage.MaHomeFragment;
+import com.example.cwspace.ui.MaklerPackage.MaStatsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Makler extends AppCompatActivity {
@@ -31,7 +31,7 @@ public class Makler extends AppCompatActivity {
                         selectedFragment = new MaHomeFragment();
                         break;
                     case R.id.nav_ma_add:
-                        selectedFragment = new AddFragment();
+                        selectedFragment = new MaAddFragment();
                         break;
                     case R.id.nav_ma_stats:
                         selectedFragment = new MaStatsFragment();

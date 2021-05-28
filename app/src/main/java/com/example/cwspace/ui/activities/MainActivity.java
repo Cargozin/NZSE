@@ -1,4 +1,4 @@
-package com.example.cwspace.Menu;
+package com.example.cwspace.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cwspace.ui.activities.CoWorker;
+import com.example.cwspace.ui.activities.Makler;
 import com.example.cwspace.R;
 
 public class MainActivity extends AppCompatActivity {

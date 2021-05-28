@@ -1,4 +1,4 @@
-package com.example.cwspace;
+package com.example.cwspace.Datenklassen;
 
 import java.util.Vector;
 

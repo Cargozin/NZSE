@@ -10,22 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cwspace">
         <activity
-            android:name=".Menu.ma_inforoom"
+            android:name=".ui.MaklerPackage.MaInfoRoom"
             android:label="info ma room"
-            android:parentActivityName=".Menu.Makler"/>
+            android:parentActivityName=".ui.activities.Makler"/>
         <activity
-            android:name=".Menu.inforoom"
+            android:name=".ui.CoWorkerPackage.CwInfoRoom"
             android:label="info cw room"
-            android:parentActivityName=".Menu.CoWorker"/>
+            android:parentActivityName=".ui.activities.CoWorker"/>
         <activity
-            android:name=".Menu.CoWorker"
+            android:name=".ui.activities.CoWorker"
             android:label="CoWorker"
-            android:parentActivityName=".Menu.MainActivity" />
+            android:parentActivityName=".ui.activities.MainActivity" />
         <activity
-            android:name=".Menu.Makler"
+            android:name=".ui.activities.Makler"
             android:label="Makler"
-            android:parentActivityName=".Menu.MainActivity" />
-        <activity android:name=".Menu.MainActivity">
+            android:parentActivityName=".ui.activities.MainActivity" />
+        <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

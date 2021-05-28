@@ -1,4 +1,4 @@
-package com.example.cwspace.Menu;
+package com.example.cwspace.ui.MaklerPackage;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,11 +10,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.cwspace.R;
 
-public class AddFragment extends Fragment {
+
+public class MaHomeFragment extends Fragment {
     @Nullable
     @org.jetbrains.annotations.Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_ma_add,container,false);
+        return inflater.inflate(R.layout.fragment_ma_home,container,false);
     }
 }
