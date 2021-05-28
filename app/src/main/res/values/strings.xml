@@ -2,7 +2,7 @@
     <string name="app_name">CoWorkerSpace</string>
 
     <string name="title_coworker" translatable="false">CoWorker</string>
-    <string name="title_makler" translatable="false">Makler</string>
+    <string name="title_makler">Makler</string>
     <string name="title_anmelden">Anmelden</string>
     <string name="title_startup">Willkommen!</string>
 

@@ -11,11 +11,12 @@
     <string name="booked_rooms">booked rooms</string>
     <string name="favorites">favorites</string>
     <string name="offered_roomstxt">Offered rooms</string>
-    <string name="adresstxt">adress:</string>
+    <string name="adresstxt">address:</string>
     <string name="imagestxt">images:</string>
     <string name="bookingtxt">book</string>
     <string name="unbooktxt">release</string>
     <string name="edittxt">edit</string>
     <string name="deletetxt">delete</string>
     <string name="stats_roomstxt">popular rooms</string>
+    <string name="title_makler">Estate Agent</string>
 </resources>
