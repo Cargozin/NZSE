@@ -19,6 +19,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/show_offered_roomlist"
+        android:background="#FFFF00"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
