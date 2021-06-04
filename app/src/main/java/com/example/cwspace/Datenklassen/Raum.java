@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class Raum {
     String name;
-    int anzahlPlätze;
+    int numSeats;
     boolean belegt;
     Gebauede gebauede;
     Vector<String> ausstattungVector;
@@ -15,5 +15,16 @@ public class Raum {
     }
     void setNichtBelegt(){
         belegt=false;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public String getNumSeats(){
+        return String.valueOf(numSeats);
+    }
+    public Raum(String newName,int newNumSeats){
+        name=newName;
+        numSeats=newNumSeats;
     }
 }
