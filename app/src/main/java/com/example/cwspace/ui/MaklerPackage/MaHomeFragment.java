@@ -23,7 +23,7 @@ public class MaHomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_ma_home,container,false);
-        recyclerView = root.findViewById(R.id.show_all_roomlist);
+        recyclerView = root.findViewById(R.id.show_offered_roomlist);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         RecyclerviewRoomsAdapter adapter = new RecyclerviewRoomsAdapter(getContext(), RoomsArray.getInstance());

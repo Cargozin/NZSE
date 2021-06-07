@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cwspace.Datenklassen.Room;
+import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.ui.activities.CoWorker;
 import com.example.cwspace.ui.activities.Makler;
 import com.example.cwspace.R;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RoomsArray.getInstance().add(new Room("test",34));
     }
     public void cwClicked(View view){
         Intent intent = new Intent(this, CoWorker.class);

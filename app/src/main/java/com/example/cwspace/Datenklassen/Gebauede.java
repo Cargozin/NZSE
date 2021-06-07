@@ -5,5 +5,5 @@ import java.util.Vector;
 public class Gebauede {
     String name;
     Adresse adresse;
-    Vector<Raum> raums;
+    Vector<Room> rooms;
 }

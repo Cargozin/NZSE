@@ -22,14 +22,16 @@ public class CwStatisticsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_cw_statistic,container,false);
-        recyclerView1 = root.findViewById(R.id.show_all_roomlist);
+        recyclerView1 = root.findViewById(R.id.show_booked_roomlist);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView1.setLayoutManager(layoutManager);
         RecyclerviewRoomsAdapter adapter = new RecyclerviewRoomsAdapter(getContext(),RoomsArray.getInstance());
         recyclerView1.setAdapter(adapter);
-        recyclerView2 = recyclerView1;
-        recyclerView2.setLayoutManager(layoutManager);
-        recyclerView2.setAdapter(adapter);
+        recyclerView2 = root.findViewById(R.id.show_fav_roomlist);
+        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(getContext());
+        recyclerView2.setLayoutManager(layoutManager1);
+        RecyclerviewRoomsAdapter adapter1 = new RecyclerviewRoomsAdapter(getContext(),RoomsArray.getInstance());
+        recyclerView2.setAdapter(adapter1);
         return root;
     }
 }

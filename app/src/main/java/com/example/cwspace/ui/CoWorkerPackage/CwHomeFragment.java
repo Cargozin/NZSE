@@ -1,6 +1,5 @@
 package com.example.cwspace.ui.CoWorkerPackage;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cwspace.Adapter.RecyclerviewRoomsAdapter;
-import com.example.cwspace.Datenklassen.Raum;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
-
-import java.util.ArrayList;
 
 
 public class CwHomeFragment extends Fragment {

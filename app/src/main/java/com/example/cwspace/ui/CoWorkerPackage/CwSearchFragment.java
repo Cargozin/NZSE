@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cwspace.Adapter.RecyclerviewRoomsAdapter;
-import com.example.cwspace.Datenklassen.Raum;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 

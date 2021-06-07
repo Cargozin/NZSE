@@ -1,15 +1,11 @@
 package com.example.cwspace.Datenklassen;
 
-import com.example.cwspace.Datenklassen.Gebauede;
-
-import java.util.Vector;
-
-public class Raum {
+public class Room {
     String name;
     int numSeats;
     boolean belegt;
-    Gebauede gebauede;
-    Vector<String> ausstattungVector;
+    //Gebauede gebauede;
+    //Vector<String> ausstattungVector;
     void setBelegt(){
         belegt=true;
     }
@@ -23,8 +19,9 @@ public class Raum {
     public String getNumSeats(){
         return String.valueOf(numSeats);
     }
-    public Raum(String newName,int newNumSeats){
+    public Room(String newName, int newNumSeats){
         name=newName;
         numSeats=newNumSeats;
+        belegt=false;
     }
 }

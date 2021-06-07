@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cwspace.Datenklassen.Raum;
+import com.example.cwspace.Datenklassen.Room;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 
@@ -42,9 +42,9 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
     }
 
     private Context mContext;
-    private ArrayList<Raum> mArrayRooms= RoomsArray.getInstance();
+    private ArrayList<Room> mArrayRooms= RoomsArray.getInstance();
 
-    public RecyclerviewRoomsAdapter(Context context, ArrayList<Raum> arrayRooms) {
+    public RecyclerviewRoomsAdapter(Context context, ArrayList<Room> arrayRooms) {
         mContext = context;
         mArrayRooms = arrayRooms;
     }
@@ -62,7 +62,7 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
 
     @Override
     public void onBindViewHolder(RoomsViewHolder holder, int position) {
-        Raum room = mArrayRooms.get(position);
+        Room room = mArrayRooms.get(position);
 
         //holder.image.setImageDrawable(room.getImage());
         holder.itemname.setText(room.getName());
