@@ -48,27 +48,27 @@ public class Makler extends AppCompatActivity {
             };
 
     public void maSaveClicked(View view) {
-        EditText nameEdit = view.findViewById(R.id.new_room_name);
-        String name="lol";
-        try {
-            name = String.valueOf(nameEdit.getText());
-        }catch (Exception e){
-            Toast toast = Toast.makeText(this, "Error", Toast.LENGTH_SHORT);
-            toast.show();
-        }
-
-        EditText numSeatsEdit = view.findViewById(R.id.editTextNumberSeats);
+        /*EditText numSeatsEdit = view.findViewById(R.id.editTextNumberSeats);
         int numSeats=0;
         try {
             numSeats=Integer.parseInt(numSeatsEdit.getText().toString());
         }catch (Exception e){
             Toast toast = Toast.makeText(this, "Error", Toast.LENGTH_SHORT);
             toast.show();
+        }*/
+        EditText editText1=findViewById(R.id.editTextNumberSeats);
+        String numtext=editText1.getText().toString();
+        if (numtext.length()==0){
+            Toast.makeText(this,"Empty",Toast.LENGTH_SHORT).show();
+        }
+        EditText editText=findViewById(R.id.new_room_name);
+        String text=editText.getText().toString();
+        if (text.length()==0){
+            Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
+        }else{
+            RoomsArray.getInstance().add(new Room(text,Integer.parseInt(numtext)));
+            Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
         }
 
-        RoomsArray.getInstance().add(new Room(name,numSeats));
-
-        Toast toast1 = Toast.makeText(this, "Saved", Toast.LENGTH_SHORT);
-        toast1.show();
     }
 }
