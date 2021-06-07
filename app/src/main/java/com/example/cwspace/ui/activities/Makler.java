@@ -48,14 +48,6 @@ public class Makler extends AppCompatActivity {
             };
 
     public void maSaveClicked(View view) {
-        /*EditText numSeatsEdit = view.findViewById(R.id.editTextNumberSeats);
-        int numSeats=0;
-        try {
-            numSeats=Integer.parseInt(numSeatsEdit.getText().toString());
-        }catch (Exception e){
-            Toast toast = Toast.makeText(this, "Error", Toast.LENGTH_SHORT);
-            toast.show();
-        }*/
         EditText editText1=findViewById(R.id.editTextNumberSeats);
         String numtext=editText1.getText().toString();
         if (numtext.length()==0){
