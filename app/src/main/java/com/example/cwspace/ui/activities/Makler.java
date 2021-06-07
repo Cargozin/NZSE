@@ -40,6 +40,7 @@ public class Makler extends AppCompatActivity {
                         break;
                     case R.id.nav_ma_stats:
                         selectedFragment = new MaStatsFragment();
+                        RoomsArray.sortByPopularity();
                         break;
                 }
 

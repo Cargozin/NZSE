@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
+import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 import com.example.cwspace.ui.CoWorkerPackage.CwHomeFragment;
 import com.example.cwspace.ui.CoWorkerPackage.CwSearchFragment;
@@ -29,12 +30,14 @@ public class CoWorker extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.nav_cw_home:
                         selectedFragment = new CwHomeFragment();
+                        RoomsArray.sortByName();
                         break;
                     case R.id.nav_cw_search:
                         selectedFragment = new CwSearchFragment();
                         break;
                     case R.id.nav_cw_stats:
                         selectedFragment = new CwStatisticsFragment();
+                        RoomsArray.sortByName();
                         break;
                 }
 

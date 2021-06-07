@@ -4,6 +4,7 @@ public class Room {
     String name;
     int numSeats;
     boolean belegt;
+    int bookings;
     //Gebauede gebauede;
     //Vector<String> ausstattungVector;
     void setBelegt(){
@@ -19,9 +20,11 @@ public class Room {
     public String getNumSeats(){
         return String.valueOf(numSeats);
     }
+    public int getBookings(){return bookings;}
     public Room(String newName, int newNumSeats){
         name=newName;
         numSeats=newNumSeats;
         belegt=false;
+        bookings = 0;
     }
 }
