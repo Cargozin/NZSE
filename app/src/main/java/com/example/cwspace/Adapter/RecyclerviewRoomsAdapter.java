@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +19,7 @@ import com.example.cwspace.R;
 
 import java.util.ArrayList;
 
-public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewRoomsAdapter.RoomsViewHolder> {
+public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewRoomsAdapter.RoomsViewHolder> implements Filterable {
 
     public class RoomsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView image;
@@ -43,10 +45,12 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
 
     private Context mContext;
     private ArrayList<Room> mArrayRooms= RoomsArray.getInstance();
+    private ArrayList<Room> mArrayRoomsAll;   //List for searchbar
 
     public RecyclerviewRoomsAdapter(Context context, ArrayList<Room> arrayRooms) {
         mContext = context;
         mArrayRooms = arrayRooms;
+        mArrayRoomsAll = new ArrayList<>(mArrayRooms);  //copy roomlist
     }
 
     @Override
@@ -69,7 +73,7 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
         holder.itemnumseats.setText(room.getNumSeats());
 
 
-        //mit intent arbeiten für suche?
+        //mit intent arbeiten für detail?
 
     }
 
@@ -89,4 +93,39 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
         mOnEntryClickListener = onEntryClickListener;
     }
 
+    @Override
+    public Filter getFilter() {
+        return roomFilter;
+    }
+
+    private Filter roomFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<Room> filteredList = new ArrayList<>();
+
+            if(constraint == null || constraint.length() == 0){
+                filteredList.addAll(mArrayRoomsAll);
+            }else{
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for(Room item: mArrayRoomsAll){
+                    if(item.getName().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            mArrayRooms.clear();
+            mArrayRooms.addAll((ArrayList)results.values);
+            notifyDataSetChanged();
+        }
+    };
 }

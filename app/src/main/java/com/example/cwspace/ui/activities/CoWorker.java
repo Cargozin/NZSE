@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
@@ -24,6 +25,7 @@ public class CoWorker extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.cw_fragment_container,new CwHomeFragment()).commit();
     }
+
     private final BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             item -> {
                 Fragment selectedFragment = null;

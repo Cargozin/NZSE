@@ -35,7 +35,7 @@ public class RoomsArray {
     }
 
     public static void store (Context c) {
-        String fname="storedrooms";
+        String fname="storedrooms.json";
         try {
             File myFile = new File( c.getApplicationContext().getExternalFilesDir("cwspace").getPath() +"/"+ fname);
             System.out.println ("*** Store:" + myFile.toString());
@@ -60,12 +60,12 @@ public class RoomsArray {
 
     public static void load(Context c) {
 
-        String fname = "myFile";
+        String fname = "storedrooms.json";
         StringBuilder alleausgaben = new StringBuilder();
         try {
-            File root = new File(Environment.getExternalStorageDirectory(), "myFile.txt");
-            File myFile = new File( c.getApplicationContext().getExternalFilesDir("files").getPath() +"/"+ fname);
-            FileInputStream fIn = new FileInputStream(root);
+            //File root = new File(Environment.getExternalStorageDirectory(), "myFile.txt");
+            File myFile = new File( c.getApplicationContext().getExternalFilesDir("cwspace").getPath() +"/"+ fname);
+            FileInputStream fIn = new FileInputStream(myFile);
             BufferedReader myReader = new BufferedReader(new InputStreamReader(fIn, StandardCharsets.UTF_8.name()));
             String line;
             while ((line = myReader.readLine()) != null) {
