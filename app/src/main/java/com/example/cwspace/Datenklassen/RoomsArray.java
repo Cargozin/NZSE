@@ -57,8 +57,9 @@ public class RoomsArray {
                     Toast.LENGTH_SHORT).show();
         }
     } // store
+
     public static void load(Context c) {
-//speisekarte = new ArrayList<>();
+
         String fname = "myFile";
         StringBuilder alleausgaben = new StringBuilder();
         try {

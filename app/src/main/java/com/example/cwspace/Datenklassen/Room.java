@@ -7,13 +7,20 @@ public class Room {
     int numSeats;
     boolean belegt,fav;
     int bookings;
-    //Gebauede gebauede;
-    //Vector<String> ausstattungVector;
+
     void setBelegt(){
         belegt=true;
     }
     void setNichtBelegt(){
         belegt=false;
+    }
+
+    void setFav(){
+        fav=true;
+    }
+
+    void setNoFav(){
+        fav=false;
     }
 
     public String getName() {

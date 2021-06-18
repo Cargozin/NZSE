@@ -67,6 +67,10 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
         //holder.image.setImageDrawable(room.getImage());
         holder.itemname.setText(room.getName());
         holder.itemnumseats.setText(room.getNumSeats());
+
+
+        //mit intent arbeiten für suche?
+
     }
 
     @Override
