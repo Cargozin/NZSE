@@ -2,6 +2,7 @@ package com.example.cwspace.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,8 +19,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RoomsArray.getInstance().add(new Room("test",34));
+        RoomsArray.load(getApplicationContext());
+        final Handler handler = new Handler();
+        final int delay = 60000; // 1000 milliseconds == 1 second
+
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                RoomsArray.store(getApplicationContext()); // Do your work here
+                handler.postDelayed(this, delay);
+            }
+        }, delay);
     }
+
     public void cwClicked(View view){
         Intent intent = new Intent(this, CoWorker.class);
         startActivity(intent);

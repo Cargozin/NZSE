@@ -1,11 +1,23 @@
 package com.example.cwspace.Datenklassen;
 
+import android.content.Context;
+import android.os.Environment;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class RoomsArray {
-    private static final ArrayList<Room> Arraylist = new ArrayList<Room>();
+    private static final ArrayList<Room> Arraylist = new ArrayList<>();
 
     private RoomsArray() {
         System.out.println("Objekt gebildet...");
@@ -16,21 +28,61 @@ public class RoomsArray {
     }
 
     public static void sortByName(){
-        Collections.sort(RoomsArray.getInstance(), new Comparator<Room>() {
-            @Override
-            public int compare(Room o1, Room o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
+        RoomsArray.getInstance().sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
+    }
+    public static void sortByPopularity(){
+        RoomsArray.getInstance().sort((o1, o2) -> Integer.compare(o2.getBookings(), o1.getBookings()));
     }
 
-    public static void sortByPopularity(){
-        Collections.sort(RoomsArray.getInstance(), new Comparator<Room>() {
-            @Override
-            public int compare(Room o1, Room o2) {
-                return Integer.compare(o2.getBookings(),o1.getBookings());
+    public static void store (Context c) {
+        String fname="storedrooms";
+        try {
+            File myFile = new File( c.getApplicationContext().getExternalFilesDir("cwspace").getPath() +"/"+ fname);
+            System.out.println ("*** Store:" + myFile.toString());
+            FileOutputStream fOut = new FileOutputStream(myFile);
+            OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
+            JSONArray jsonarray = new JSONArray();
+            for (Room p: RoomsArray.getInstance()) // Schleife über alle Elemente
+            {
+                JSONObject object;
+                object = p.store();
+                jsonarray.put(object);
             }
-        });
-    }
+            myOutWriter.append(jsonarray.toString());
+            myOutWriter.close();
+            fOut.close();
+            Toast.makeText(c, RoomsArray.getInstance().size() + " werden gespeichert!", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(c, e.getMessage(),
+                    Toast.LENGTH_SHORT).show();
+        }
+    } // store
+    public static void load(Context c) {
+//speisekarte = new ArrayList<>();
+        String fname = "myFile";
+        StringBuilder alleausgaben = new StringBuilder();
+        try {
+            File root = new File(Environment.getExternalStorageDirectory(), "myFile.txt");
+            File myFile = new File( c.getApplicationContext().getExternalFilesDir("files").getPath() +"/"+ fname);
+            FileInputStream fIn = new FileInputStream(root);
+            BufferedReader myReader = new BufferedReader(new InputStreamReader(fIn, StandardCharsets.UTF_8.name()));
+            String line;
+            while ((line = myReader.readLine()) != null) {
+                alleausgaben.append(line);
+            }
+            JSONArray jsonArray = new JSONArray(alleausgaben.toString());
+            Toast.makeText(c, "Anzahl Räume: " + jsonArray.length(), Toast.LENGTH_LONG).show();
+
+            Room room;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                room = new Room(jsonObject);
+                RoomsArray.getInstance().add(room);
+            }
+        }
+        catch (Exception e) {
+            Toast.makeText(c, e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace(); }
+    } // load
 
 }
