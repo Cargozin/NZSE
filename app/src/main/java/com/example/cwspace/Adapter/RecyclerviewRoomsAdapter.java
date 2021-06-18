@@ -2,12 +2,15 @@ package com.example.cwspace.Adapter;
 
 import android.content.Context;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,26 +24,48 @@ import java.util.ArrayList;
 
 public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewRoomsAdapter.RoomsViewHolder> implements Filterable {
 
-    public class RoomsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class RoomsViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView itemname, itemnumseats;
 
         RoomsViewHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
             image = (ImageView) itemView.findViewById(R.id.itemimage);
             itemname = (TextView) itemView.findViewById(R.id.itemname);
             itemnumseats = (TextView) itemView.findViewById(R.id.itemnumseats);
+
+            itemView.findViewById(R.id.details).setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    Room r = mArrayRooms.get(getAdapterPosition());
+
+                    Log.d("demo","onClick: detail for " + mArrayRooms.get(getAdapterPosition()).getName());
+
+                    Intent intent = new Intent();
+
+                }
+            });
+
+            itemView.findViewById(R.id.favButton).setOnClickListener(new View.OnClickListener(){
+                public void onClick(View view){
+                    final ImageButton button = (ImageButton) itemView.findViewById(R.id.favButton);
+
+                    Room r = mArrayRooms.get(getAdapterPosition());
+                    r.toggleFav();
+
+                    if(r.getFav()){ //Falls true
+                        button.setImageResource(R.drawable.ic_fav);
+                    }else{  //false
+                        button.setImageResource(R.drawable.ic_notfav);
+                    }
+
+                    Log.d("Recyclerview.class","onClick: fav toggled for: " + mArrayRooms.get(getAdapterPosition()).getName());
+                }
+            });
         }
 
-        @Override
-        public void onClick(View v) {
-            // The user may not set a click listener for list items, in which case our listener
-            // will be null, so we need to check for this
-            if (mOnEntryClickListener != null) {
-                mOnEntryClickListener.onEntryClick(v, getLayoutPosition());
-            }
-        }
+
+
     }
 
     private Context mContext;
@@ -80,17 +105,6 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
-    }
-
-
-    private OnEntryClickListener mOnEntryClickListener;
-
-    public interface OnEntryClickListener {
-        void onEntryClick(View view, int position);
-    }
-
-    public void setOnEntryClickListener(OnEntryClickListener onEntryClickListener) {
-        mOnEntryClickListener = onEntryClickListener;
     }
 
     @Override
