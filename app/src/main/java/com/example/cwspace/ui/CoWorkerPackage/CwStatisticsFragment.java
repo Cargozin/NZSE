@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cwspace.Adapter.RecyclerviewBookedRoomsAdapter;
+import com.example.cwspace.Adapter.RecyclerviewFavRoomsAdapter;
 import com.example.cwspace.Adapter.RecyclerviewRoomsAdapter;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
@@ -25,12 +27,12 @@ public class CwStatisticsFragment extends Fragment {
         recyclerView1 = root.findViewById(R.id.show_booked_roomlist);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView1.setLayoutManager(layoutManager);
-        RecyclerviewRoomsAdapter adapter = new RecyclerviewRoomsAdapter(getContext(),RoomsArray.getInstance());
+        RecyclerviewBookedRoomsAdapter adapter = new RecyclerviewBookedRoomsAdapter(getContext(),RoomsArray.getInstance());
         recyclerView1.setAdapter(adapter);
         recyclerView2 = root.findViewById(R.id.show_fav_roomlist);
         RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(getContext());
         recyclerView2.setLayoutManager(layoutManager1);
-        RecyclerviewRoomsAdapter adapter1 = new RecyclerviewRoomsAdapter(getContext(),RoomsArray.getInstance());
+        RecyclerviewFavRoomsAdapter adapter1 = new RecyclerviewFavRoomsAdapter(getContext(),RoomsArray.getInstance());
         recyclerView2.setAdapter(adapter1);
         return root;
     }
