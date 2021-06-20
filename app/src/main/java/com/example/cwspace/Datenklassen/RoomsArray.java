@@ -61,9 +61,9 @@ public class RoomsArray {
     public static void load(Context c) {
 
         String fname = "storedrooms.json";
+        RoomsArray.getInstance().clear();
         StringBuilder alleausgaben = new StringBuilder();
         try {
-            //File root = new File(Environment.getExternalStorageDirectory(), "myFile.txt");
             File myFile = new File( c.getApplicationContext().getExternalFilesDir("cwspace").getPath() +"/"+ fname);
             FileInputStream fIn = new FileInputStream(myFile);
             BufferedReader myReader = new BufferedReader(new InputStreamReader(fIn, StandardCharsets.UTF_8.name()));

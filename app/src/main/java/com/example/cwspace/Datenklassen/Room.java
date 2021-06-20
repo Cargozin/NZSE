@@ -40,14 +40,18 @@ public class Room {
     {
         try {
             name = jsonObject.getString("name");
-            numSeats = jsonObject.getInt("numseats");
+            numSeats = jsonObject.getInt("numSeats");
             bookings = jsonObject.getInt("bookings");
+            belegt= jsonObject.getBoolean("isBooked");
+            fav = jsonObject.getBoolean("isFavorite");
         }
         catch (Exception e)
         {
             name = "Fail";
             numSeats = 0;
             bookings = 0;
+            belegt = false;
+            fav = false;
         }
     }
 
