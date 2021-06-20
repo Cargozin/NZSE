@@ -8,20 +8,24 @@ public class Room {
     boolean belegt,fav;
     int bookings;
 
-    void setBelegt(){
-        belegt=true;
-    }
-    void setNichtBelegt(){
-        belegt=false;
-    }
-
-    void setFav(){
-        fav=true;
+    public void toggleBelegt(){
+        if(belegt){
+            belegt = false;
+        }else{
+            belegt = true;
+        }
     }
 
-    void setNoFav(){
-        fav=false;
+    public void toggleFav(){
+        if(fav){
+            fav = false;
+        }else{
+            fav = true;
+        }
     }
+
+    public boolean getBelegt(){return belegt;}
+    public boolean getFav(){return fav;}
 
     public String getName() {
         return name;
