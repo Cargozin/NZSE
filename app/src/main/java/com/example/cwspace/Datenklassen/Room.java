@@ -26,7 +26,6 @@ public class Room {
 
     public boolean getBelegt(){return belegt;}
     public boolean getFav(){return fav;}
-
     public String getName() {
         return name;
     }
@@ -34,14 +33,14 @@ public class Room {
         return String.valueOf(numSeats);
     }
     public int getBookings(){return bookings;}
+
     public Room(String newName, int newNumSeats){
         name=newName;
         numSeats=newNumSeats;
         belegt=false;
         bookings = 0;
     }
-    public Room (JSONObject jsonObject)
-    {
+    public Room (JSONObject jsonObject) {
         try {
             name = jsonObject.getString("name");
             numSeats = jsonObject.getInt("numSeats");

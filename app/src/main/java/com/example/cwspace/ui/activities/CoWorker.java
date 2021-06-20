@@ -20,8 +20,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class CoWorker extends AppCompatActivity {
 
-    private RecyclerviewRoomsAdapter adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
