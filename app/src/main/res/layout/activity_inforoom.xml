@@ -42,7 +42,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/showed_room_numSearts"
+        android:id="@+id/showed_room_numSeats"
         android:text="0"
         android:textSize="30sp"
         app:layout_constraintTop_toBottomOf="@id/showed_room_name"
@@ -64,7 +64,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/showed_room_adress"
+        android:id="@+id/showed_room_address"
         android:text="Hier eine Beispiel Adresse"
         android:textSize="30sp"
         app:layout_constraintTop_toBottomOf="@id/showed_room_adresstxt"
@@ -78,7 +78,7 @@
         android:id="@+id/showed_room_imagestxt"
         android:text="@string/imagestxt"
         android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/showed_room_adress"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_address"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"/>
@@ -98,6 +98,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/showed_room_booking"
         android:text="@string/bookingtxt"
+        android:onClick="bookClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/showed_room_unbook"
@@ -109,6 +110,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/showed_room_unbook"
         android:text="@string/unbooktxt"
+        android:onClick="unbookClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/showed_room_booking"
         app:layout_constraintEnd_toEndOf="parent"

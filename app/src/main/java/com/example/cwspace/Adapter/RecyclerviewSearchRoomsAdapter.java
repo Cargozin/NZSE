@@ -19,16 +19,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cwspace.Datenklassen.Room;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
-import com.example.cwspace.ui.CoWorkerPackage.CwInfoRoom;
 
 import java.util.ArrayList;
 
-public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewRoomsAdapter.RoomsViewHolder> implements Filterable {
+public class RecyclerviewSearchRoomsAdapter extends RecyclerView.Adapter<RecyclerviewSearchRoomsAdapter.RoomsViewHolder> implements Filterable {
 
     public class RoomsViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView itemname, itemnumseats;
-        ImageButton favimage;
+        ImageButton favimage, searchB;
 
         RoomsViewHolder(View itemView) {
             super(itemView);
@@ -36,16 +35,17 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
             itemname = itemView.findViewById(R.id.itemname);
             itemnumseats = itemView.findViewById(R.id.itemnumseats);
             favimage = itemView.findViewById(R.id.favButton);
+            searchB = itemView.findViewById(R.id.searchRequest);
 
-            itemView.findViewById(R.id.details).setOnClickListener(view -> {
-                Room r = mArrayRooms.get(getAdapterPosition());
+            itemView.findViewById(R.id.details).setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    Room r = mArrayRooms.get(getAdapterPosition());
 
-                Log.d("demo","onClick: detail for " + mArrayRooms.get(getAdapterPosition()).getName());
+                    Log.d("demo","onClick: detail for " + mArrayRooms.get(getAdapterPosition()).getName());
 
-                Intent intent = new Intent(itemView.getContext(), CwInfoRoom.class);
-                intent.putExtra("Position",getAdapterPosition());
-                itemView.getContext().startActivity(intent);
-
+                    Intent intent = new Intent();
+                }
             });
             itemView.findViewById(R.id.favButton).setOnClickListener(view -> {
                 final ImageButton button = favimage;
@@ -62,10 +62,12 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
         }
     }
 
+    private final Context mContext;
     private ArrayList<Room> mArrayRooms;
     private ArrayList<Room> mArrayRoomsAll;   //List for searchbar
 
-    public RecyclerviewRoomsAdapter(Context context, ArrayList<Room> arrayRooms) {
+    public RecyclerviewSearchRoomsAdapter(Context context, ArrayList<Room> arrayRooms) {
+        mContext = context;
         mArrayRooms = arrayRooms;
         mArrayRoomsAll = new ArrayList<>(mArrayRooms);  //copy roomlist
     }
