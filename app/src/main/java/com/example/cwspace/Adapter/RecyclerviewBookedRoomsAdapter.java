@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cwspace.Datenklassen.Room;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
+import com.example.cwspace.ui.CoWorkerPackage.CwInfoRoom;
 
 import java.util.ArrayList;
 
@@ -36,16 +37,16 @@ public class RecyclerviewBookedRoomsAdapter extends RecyclerView.Adapter<Recycle
             itemnumseats = (TextView) itemView.findViewById(R.id.itemnumseats);
             favimage = (ImageButton) itemView.findViewById(R.id.favButton);
 
-            itemView.findViewById(R.id.details).setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view){
-                    Room r = mArrayRooms.get(getAdapterPosition());
+            itemView.findViewById(R.id.details).setOnClickListener(view -> {
 
-                    Log.d("demo","onClick: detail for " + mArrayRooms.get(getAdapterPosition()).getName());
+                Log.d("demo","onClick: detail for " + mArrayRooms.get(getAdapterPosition()).getName());
 
-                    Intent intent = new Intent();
-                }
+                Intent intent = new Intent(itemView.getContext(), CwInfoRoom.class);
+                intent.putExtra("Position",getAdapterPosition());
+                itemView.getContext().startActivity(intent);
+
             });
+
             itemView.findViewById(R.id.favButton).setOnClickListener(view -> {
                 final ImageButton button = favimage;
                 Room r = mArrayRooms.get(getAdapterPosition());
