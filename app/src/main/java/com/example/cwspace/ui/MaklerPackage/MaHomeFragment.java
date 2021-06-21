@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cwspace.Adapter.RecyclerviewRoomsAdapter;
+import com.example.cwspace.Adapter.RecyclerviewCWRoomsAdapter;
+import com.example.cwspace.Adapter.RecyclerviewMaRoomsAdapter;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 
@@ -26,7 +27,7 @@ public class MaHomeFragment extends Fragment {
         recyclerView = root.findViewById(R.id.show_offered_roomlist);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerviewRoomsAdapter adapter = new RecyclerviewRoomsAdapter(getContext(), RoomsArray.getInstance());
+        RecyclerviewMaRoomsAdapter adapter = new RecyclerviewMaRoomsAdapter(getContext(), RoomsArray.getInstance());
         recyclerView.setAdapter(adapter);
         return root;
     }

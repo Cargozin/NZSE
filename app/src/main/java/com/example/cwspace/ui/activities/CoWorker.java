@@ -4,13 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;       //searchbar
-import android.view.MenuItem;           //searchbar
-import android.widget.ArrayAdapter;
-import android.widget.SearchView;
 
-import com.example.cwspace.Adapter.RecyclerviewRoomsAdapter;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 import com.example.cwspace.ui.CoWorkerPackage.CwHomeFragment;

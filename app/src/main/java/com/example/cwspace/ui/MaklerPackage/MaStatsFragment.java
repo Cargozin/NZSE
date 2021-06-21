@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cwspace.Adapter.RecyclerviewRoomsAdapter;
+import com.example.cwspace.Adapter.RecyclerviewCWRoomsAdapter;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 
@@ -25,7 +25,7 @@ public class MaStatsFragment extends Fragment {
         recyclerView = root.findViewById(R.id.show_mastats_roomlist);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerviewRoomsAdapter adapter = new RecyclerviewRoomsAdapter(getContext(), RoomsArray.getInstance());
+        RecyclerviewCWRoomsAdapter adapter = new RecyclerviewCWRoomsAdapter(getContext(), RoomsArray.getInstance());
         recyclerView.setAdapter(adapter);
         return root;
     }

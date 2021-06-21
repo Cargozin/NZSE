@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cwspace.Adapter.RecyclerviewBookedRoomsAdapter;
 import com.example.cwspace.Adapter.RecyclerviewFavRoomsAdapter;
-import com.example.cwspace.Adapter.RecyclerviewRoomsAdapter;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 

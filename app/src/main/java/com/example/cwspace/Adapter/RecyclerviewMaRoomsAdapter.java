@@ -17,13 +17,14 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cwspace.Datenklassen.Room;
-import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
-import com.example.cwspace.ui.CoWorkerPackage.CwInfoRoom;
+import com.example.cwspace.ui.MaklerPackage.MaInfoRoom;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewRoomsAdapter.RoomsViewHolder> implements Filterable {
+public class RecyclerviewMaRoomsAdapter extends RecyclerView.Adapter<RecyclerviewMaRoomsAdapter.RoomsViewHolder> implements Filterable {
 
     public class RoomsViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
@@ -38,34 +39,21 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
             favimage = itemView.findViewById(R.id.favButton);
 
             itemView.findViewById(R.id.details).setOnClickListener(view -> {
-                Room r = mArrayRooms.get(getAdapterPosition());
 
                 Log.d("demo","onClick: detail for " + mArrayRooms.get(getAdapterPosition()).getName());
 
-                Intent intent = new Intent(itemView.getContext(), CwInfoRoom.class);
+                Intent intent = new Intent(itemView.getContext(), MaInfoRoom.class);
                 intent.putExtra("Position",getAdapterPosition());
                 itemView.getContext().startActivity(intent);
 
             });
-            itemView.findViewById(R.id.favButton).setOnClickListener(view -> {
-                final ImageButton button = favimage;
-                Room r = mArrayRooms.get(getAdapterPosition());
-                r.toggleFav();
-                if(r.getFav()){ //Falls true
-                    button.setImageResource(R.drawable.ic_fav);
-                }else{  //false
-                    button.setImageResource(R.drawable.ic_notfav);
-                }
-
-                Log.d("Recyclerview.class","onClick: fav toggled for: " + mArrayRooms.get(getAdapterPosition()).getName());
-            });
         }
     }
 
-    private ArrayList<Room> mArrayRooms;
-    private ArrayList<Room> mArrayRoomsAll;   //List for searchbar
+    private final ArrayList<Room> mArrayRooms;
+    private final ArrayList<Room> mArrayRoomsAll;   //List for searchbar
 
-    public RecyclerviewRoomsAdapter(Context context, ArrayList<Room> arrayRooms) {
+    public RecyclerviewMaRoomsAdapter(Context context, ArrayList<Room> arrayRooms) {
         mArrayRooms = arrayRooms;
         mArrayRoomsAll = new ArrayList<>(mArrayRooms);  //copy roomlist
     }
@@ -75,6 +63,7 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
         return mArrayRooms.size();
     }
 
+    @NotNull
     @Override
     public RoomsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_view, parent, false);
@@ -88,16 +77,11 @@ public class RecyclerviewRoomsAdapter extends RecyclerView.Adapter<RecyclerviewR
         //holder.image.setImageDrawable(room.getImage());
         holder.itemname.setText(room.getName());
         holder.itemnumseats.setText(room.getNumSeats());
-
-        if (room.getFav()) {
-            holder.favimage.setImageResource(R.drawable.ic_fav);
-        } else{
-            holder.favimage.setImageResource(R.drawable.ic_notfav);
-        }
+        holder.itemView.findViewById(R.id.favButton).setVisibility(View.INVISIBLE);
     }
 
     @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+    public void onAttachedToRecyclerView(@NotNull RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
 
