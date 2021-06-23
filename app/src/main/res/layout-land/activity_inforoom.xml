@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CoWorkerPackage.CwInfoRoom">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showed_room_nametxt"
+        android:text="@string/nametxt"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showed_room_name"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/showed_room_nametxt"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showed_room_numSeatstxt"
+        android:text="@string/numSeatsTxt"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_nametxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showed_room_numSeats"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_name"
+        app:layout_constraintStart_toEndOf="@id/showed_room_numSeatstxt"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showed_room_adresstxt"
+        android:text="@string/adresstxt"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_numSeatstxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showed_room_address"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_adresstxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"/>
+    <TextView
+        android:id="@+id/showed_room_availabilityTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verfügbarkeit:"
+        android:textSize="20sp"
+        android:layout_margin="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showed_room_address"/>
+    <TextView
+        android:id="@+id/showed_room_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/showed_room_availabilityTxt"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_address" />
+
+    <TextView
+        android:id="@+id/showed_room_imagestxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="344dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/imagestxt"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/showed_room_images"
+        android:layout_width="150dp"
+        android:layout_height="249dp"
+        android:layout_marginStart="400dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_baseline_add_photo_alternate_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_imagestxt" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showed_room_booking"
+        android:text="@string/bookingtxt"
+        android:onClick="bookClicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/showed_room_unbook"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showed_room_unbook"
+        android:text="@string/unbooktxt"
+        android:onClick="unbookClicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/showed_room_booking"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
