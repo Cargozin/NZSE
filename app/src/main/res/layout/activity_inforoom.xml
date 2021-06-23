@@ -68,6 +68,23 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"/>
+    <TextView
+        android:id="@+id/showed_room_availabilityTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verfügbarkeit:"
+        android:textSize="20sp"
+        android:layout_margin="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showed_room_address"/>
+    <TextView
+        android:id="@+id/showed_room_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/showed_room_availabilityTxt"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_address" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -75,7 +92,7 @@
         android:id="@+id/showed_room_imagestxt"
         android:text="@string/imagestxt"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/showed_room_address"
+        app:layout_constraintTop_toBottomOf="@id/showed_room_availabilityTxt"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"/>
