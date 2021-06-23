@@ -28,7 +28,7 @@ public class Room {
     public String getNumSeats(){
         return String.valueOf(numSeats);
     }
-    public int getBookings(){return bookings;}
+    public String getBookings(){return String.valueOf(bookings);}
     public String getAddress() {
         return address;
     }
@@ -41,6 +41,7 @@ public class Room {
     }
     public void setOccupied(){
         occupied = true;
+        bookings=bookings+1;
     }
     public void setUnOccupied(){
         occupied = false;

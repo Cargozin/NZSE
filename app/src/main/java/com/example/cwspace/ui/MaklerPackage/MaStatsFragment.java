@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cwspace.Adapter.RecyclerviewMaRoomsAdapter;
+import com.example.cwspace.Adapter.RecyclerviewMaStatsRoomsAdapter;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 
@@ -25,7 +26,7 @@ public class MaStatsFragment extends Fragment {
         recyclerView = root.findViewById(R.id.show_mastats_roomlist);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerviewMaRoomsAdapter adapter = new RecyclerviewMaRoomsAdapter(getContext(), RoomsArray.getInstance());
+        RecyclerviewMaStatsRoomsAdapter adapter = new RecyclerviewMaStatsRoomsAdapter(getContext(), RoomsArray.getInstance());
         recyclerView.setAdapter(adapter);
         return root;
     }

@@ -3,6 +3,7 @@ package com.example.cwspace.Adapter;
 import android.content.Context;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,13 +30,15 @@ public class RecyclerviewFavRoomsAdapter extends RecyclerView.Adapter<Recyclervi
         ImageView image;
         TextView itemname, itemnumseats;
         ImageButton favimage;
+        ImageView bookedImage;
 
         RoomsViewHolder(View itemView) {
             super(itemView);
-            image = (ImageView) itemView.findViewById(R.id.itemimage);
-            itemname = (TextView) itemView.findViewById(R.id.itemname);
-            itemnumseats = (TextView) itemView.findViewById(R.id.itemnumseats);
-            favimage = (ImageButton) itemView.findViewById(R.id.favButton);
+            image = itemView.findViewById(R.id.itemimage);
+            itemname = itemView.findViewById(R.id.itemname);
+            itemnumseats = itemView.findViewById(R.id.itemnumseats);
+            favimage = itemView.findViewById(R.id.favButton);
+            bookedImage = itemView.findViewById(R.id.isBooked);
 
             itemView.findViewById(R.id.details).setOnClickListener(view -> {
 
@@ -90,7 +93,13 @@ public class RecyclerviewFavRoomsAdapter extends RecyclerView.Adapter<Recyclervi
         //holder.image.setImageDrawable(room.getImage());
         holder.itemname.setText(room.getName());
         holder.itemnumseats.setText(room.getNumSeats());
-
+        if (room.getOccupied()){
+            holder.bookedImage.setImageResource(R.drawable.ic_baseline_bookmark_24);
+            holder.bookedImage.setColorFilter(Color.RED);
+        }else{
+            holder.bookedImage.setImageResource(R.drawable.ic_baseline_bookmark_border_24);
+            holder.bookedImage.setColorFilter(Color.GREEN);
+        }
         if (room.getFav()) {
             holder.favimage.setImageResource(R.drawable.ic_fav);
             holder.itemView.setVisibility(View.VISIBLE);

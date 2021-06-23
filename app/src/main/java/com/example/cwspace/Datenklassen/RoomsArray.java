@@ -31,7 +31,7 @@ public class RoomsArray {
         RoomsArray.getInstance().sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
     }
     public static void sortByPopularity(){
-        RoomsArray.getInstance().sort((o1, o2) -> Integer.compare(o2.getBookings(), o1.getBookings()));
+        RoomsArray.getInstance().sort((o1, o2) -> Integer.compare(Integer.parseInt(o2.getBookings()), Integer.parseInt(o1.getBookings())));
     }
 
     public static void store (Context c) {

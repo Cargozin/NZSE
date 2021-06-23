@@ -25,21 +25,21 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class RecyclerviewMaRoomsAdapter extends RecyclerView.Adapter<RecyclerviewMaRoomsAdapter.RoomsViewHolder> implements Filterable {
+public class RecyclerviewMaStatsRoomsAdapter extends RecyclerView.Adapter<RecyclerviewMaStatsRoomsAdapter.RoomsViewHolder> {
 
     public class RoomsViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView itemname, itemnumseats;
-        ImageButton favimage;
         ImageView bookedImage;
+        TextView bookings;
 
         RoomsViewHolder(View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.itemimage);
             itemname = itemView.findViewById(R.id.itemname);
             itemnumseats = itemView.findViewById(R.id.itemnumseats);
-            favimage = itemView.findViewById(R.id.favButton);
             bookedImage = itemView.findViewById(R.id.isBooked);
+            bookings = itemView.findViewById(R.id.booking);
 
             itemView.findViewById(R.id.details).setOnClickListener(view -> {
 
@@ -54,11 +54,9 @@ public class RecyclerviewMaRoomsAdapter extends RecyclerView.Adapter<Recyclervie
     }
 
     private final ArrayList<Room> mArrayRooms;
-    private final ArrayList<Room> mArrayRoomsAll;   //List for searchbar
 
-    public RecyclerviewMaRoomsAdapter(Context context, ArrayList<Room> arrayRooms) {
+    public RecyclerviewMaStatsRoomsAdapter(Context context, ArrayList<Room> arrayRooms) {
         mArrayRooms = arrayRooms;
-        mArrayRoomsAll = new ArrayList<>(mArrayRooms);  //copy roomlist
     }
 
     @Override
@@ -69,7 +67,7 @@ public class RecyclerviewMaRoomsAdapter extends RecyclerView.Adapter<Recyclervie
     @NotNull
     @Override
     public RoomsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_view_stats, parent, false);
         return new RoomsViewHolder(view);
     }
 
@@ -80,7 +78,7 @@ public class RecyclerviewMaRoomsAdapter extends RecyclerView.Adapter<Recyclervie
         //holder.image.setImageDrawable(room.getImage());
         holder.itemname.setText(room.getName());
         holder.itemnumseats.setText(room.getNumSeats());
-        holder.itemView.findViewById(R.id.favButton).setVisibility(View.INVISIBLE);
+        holder.bookings.setText(room.getBookings());
         if (room.getOccupied()){
             holder.bookedImage.setImageResource(R.drawable.ic_baseline_bookmark_24);
             holder.bookedImage.setColorFilter(Color.RED);
@@ -94,40 +92,4 @@ public class RecyclerviewMaRoomsAdapter extends RecyclerView.Adapter<Recyclervie
     public void onAttachedToRecyclerView(@NotNull RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
-
-    @Override
-    public Filter getFilter() {
-        return roomFilter;
-    }
-
-    private final Filter roomFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<Room> filteredList = new ArrayList<>();
-
-            if(constraint == null || constraint.length() == 0){
-                filteredList.addAll(mArrayRoomsAll);
-            }else{
-                String filterPattern = constraint.toString().toLowerCase().trim();
-
-                for(Room item: mArrayRoomsAll){
-                    if(item.getName().toLowerCase().contains(filterPattern)){
-                        filteredList.add(item);
-                    }
-                }
-            }
-
-            FilterResults results = new FilterResults();
-            results.values = filteredList;
-
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            mArrayRooms.clear();
-            mArrayRooms.addAll((ArrayList)results.values);
-            notifyDataSetChanged();
-        }
-    };
 }
