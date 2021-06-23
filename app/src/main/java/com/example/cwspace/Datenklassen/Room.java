@@ -1,20 +1,16 @@
 package com.example.cwspace.Datenklassen;
 
+import android.location.Address;
+
 import org.json.JSONObject;
 
 public class Room {
-    String name;
+    String name,address;
     int numSeats;
-    boolean belegt,fav;
+    boolean occupied,fav;
     int bookings;
 
-    public void toggleBelegt(){
-        if(belegt){
-            belegt = false;
-        }else{
-            belegt = true;
-        }
-    }
+
 
     public void toggleFav(){
         if(fav){
@@ -24,7 +20,7 @@ public class Room {
         }
     }
 
-    public boolean getBelegt(){return belegt;}
+    public boolean getOccupied(){return occupied;}
     public boolean getFav(){return fav;}
     public String getName() {
         return name;
@@ -33,6 +29,9 @@ public class Room {
         return String.valueOf(numSeats);
     }
     public int getBookings(){return bookings;}
+    public String getAddress() {
+        return address;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -40,27 +39,39 @@ public class Room {
     public void setNumSeats(int numSeats) {
         this.numSeats = numSeats;
     }
+    public void setOccupied(){
+        occupied = true;
+    }
+    public void setUnOccupied(){
+        occupied = false;
+    }
+    public void setAddress(String newAddress) {
+        address = newAddress;
+    }
 
-    public Room(String newName, int newNumSeats){
+    public Room(String newName, int newNumSeats, String newAddress){
         name=newName;
         numSeats=newNumSeats;
-        belegt=false;
+        address = newAddress;
+        occupied =false;
         bookings = 0;
     }
     public Room (JSONObject jsonObject) {
         try {
             name = jsonObject.getString("name");
+            address = jsonObject.getString("address");
             numSeats = jsonObject.getInt("numSeats");
             bookings = jsonObject.getInt("bookings");
-            belegt= jsonObject.getBoolean("isBooked");
+            occupied = jsonObject.getBoolean("isBooked");
             fav = jsonObject.getBoolean("isFavorite");
         }
         catch (Exception e)
         {
             name = "Fail";
+            address = "Bakdad Fischmarkt";
             numSeats = 0;
             bookings = 0;
-            belegt = false;
+            occupied = false;
             fav = false;
         }
     }
@@ -69,8 +80,9 @@ public class Room {
         JSONObject object = new JSONObject();
         try {
             object.put("name", this.name);
+            object.put("address",this.address);
             object.put("numSeats", this.numSeats);
-            object.put("isBooked", this.belegt);
+            object.put("isBooked", this.occupied);
             object.put("isFavorite",this.fav);
             object.put("bookings",this.bookings);
         } catch (Exception e) {

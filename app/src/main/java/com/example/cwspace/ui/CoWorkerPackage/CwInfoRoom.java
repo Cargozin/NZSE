@@ -23,14 +23,15 @@ public class CwInfoRoom extends AppCompatActivity {
         showed_room_address = findViewById(R.id.showed_room_address);
         showed_room_name.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",0)).getName());
         showed_room_numSeats.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",0)).getNumSeats());
+        showed_room_address.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",0)).getAddress());
     }
 
     public void bookClicked(View view){
-        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).toggleBelegt();
+        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setOccupied();
         Toast.makeText(getApplicationContext(), "Raum ist jezt gebucht", Toast.LENGTH_SHORT).show();
     }
     public void unbookClicked(View view){
-        RoomsArray.getInstance().get(getIntent().getIntExtra("Position", -1)).toggleBelegt();
+        RoomsArray.getInstance().get(getIntent().getIntExtra("Position", -1)).setUnOccupied();
         Toast.makeText(getApplicationContext()," Raum wieder verfügbar", Toast.LENGTH_SHORT).show();
     }
 }

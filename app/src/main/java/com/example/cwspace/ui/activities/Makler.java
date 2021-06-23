@@ -49,17 +49,19 @@ public class Makler extends AppCompatActivity {
             };
 
     public void maSaveClicked(View view) {
-        EditText editText1=findViewById(R.id.editTextNumberSeats);
-        String numtext=editText1.getText().toString();
-        if (numtext.length()==0){
-            Toast.makeText(this,"Empty",Toast.LENGTH_SHORT).show();
+        EditText editName=findViewById(R.id.new_room_name);
+        EditText editNumSeats=findViewById(R.id.editTextNumberSeats);
+        EditText editAddress = findViewById(R.id.edit_address);
+        if (editName.getText().toString().length()==0){
+            Toast.makeText(this,"Name is Empty",Toast.LENGTH_SHORT).show();
         }
-        EditText editText=findViewById(R.id.new_room_name);
-        String text=editText.getText().toString();
-        if (text.length()==0){
-            Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
+        if (editAddress.getText().toString().length()==0){
+            Toast.makeText(this,"Address is Empty",Toast.LENGTH_SHORT).show();
+        }
+        if (editNumSeats.getText().toString().length()==0){
+            Toast.makeText(this, "NumSeats is Empty", Toast.LENGTH_SHORT).show();
         }else{
-            RoomsArray.getInstance().add(new Room(text,Integer.parseInt(numtext)));
+            RoomsArray.getInstance().add(new Room(editName.getText().toString(),Integer.parseInt(editNumSeats.getText().toString()),editAddress.getText().toString()));
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
         }
 

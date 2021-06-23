@@ -17,7 +17,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cwspace.Datenklassen.Room;
-import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 import com.example.cwspace.ui.CoWorkerPackage.CwInfoRoom;
 
@@ -96,7 +95,7 @@ public class RecyclerviewBookedRoomsAdapter extends RecyclerView.Adapter<Recycle
         } else{
             holder.favimage.setImageResource(R.drawable.ic_notfav);
         }
-        if (room.getBelegt()){
+        if (room.getOccupied()){
             holder.itemView.setVisibility(View.VISIBLE);
         }else{
             holder.itemView.setVisibility(View.GONE);

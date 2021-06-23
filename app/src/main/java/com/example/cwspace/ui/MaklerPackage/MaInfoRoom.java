@@ -18,19 +18,17 @@ import com.example.cwspace.R;
 import com.example.cwspace.ui.activities.Makler;
 
 public class MaInfoRoom extends AppCompatActivity {
-    TextView showed_room_name;
-    TextView showed_room_numSeats;
-    TextView showed_room_address;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ma_inforoom);
         Room room = RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1));
-        showed_room_name = findViewById(R.id.showed_room_name);
-        showed_room_numSeats = findViewById(R.id.showed_room_numSeats);
-        showed_room_address = findViewById(R.id.showed_room_address);
+        TextView showed_room_name = findViewById(R.id.showed_room_name);
+        TextView showed_room_numSeats = findViewById(R.id.showed_room_numSeats);
+        TextView showed_room_address = findViewById(R.id.showed_room_address);
         showed_room_name.setText(room.getName());
         showed_room_numSeats.setText(room.getNumSeats());
+        showed_room_address.setText(room.getAddress());
     }
 
     public void deleteClicked(View view){
@@ -44,13 +42,17 @@ public class MaInfoRoom extends AppCompatActivity {
         EditText name=findViewById(R.id.edit_room_name),numSeats=findViewById(R.id.edit_room_numSeats),address=findViewById(R.id.edit_room_adress);
         name.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getName());
         numSeats.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getNumSeats());
+        address.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getAddress());
         Toast.makeText(getApplicationContext(),"bearbeiten...", Toast.LENGTH_SHORT).show();
     }
     public void saveClicked(View view){
         EditText editName = findViewById(R.id.edit_room_name);
-        EditText editNumseats = findViewById(R.id.edit_room_numSeats);
+        EditText editNumSeats = findViewById(R.id.edit_room_numSeats);
         EditText editAddress = findViewById(R.id.edit_room_adress);
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setName(editName.getText().toString());
-        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setNumSeats(Integer.parseInt(editNumseats.getText().toString()));
+        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setNumSeats(Integer.parseInt(editNumSeats.getText().toString()));
+        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setAddress(editAddress.getText().toString());
+        Toast.makeText(getApplicationContext(),"gespeichert",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(),Makler.class));
     }
 }
