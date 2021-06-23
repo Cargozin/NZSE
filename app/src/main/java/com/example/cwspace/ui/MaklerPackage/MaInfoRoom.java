@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -26,9 +27,17 @@ public class MaInfoRoom extends AppCompatActivity {
         TextView showed_room_name = findViewById(R.id.showed_room_name);
         TextView showed_room_numSeats = findViewById(R.id.showed_room_numSeats);
         TextView showed_room_address = findViewById(R.id.showed_room_address);
+        TextView showed_room_availability = findViewById(R.id.showed_room_availability);
         showed_room_name.setText(room.getName());
         showed_room_numSeats.setText(room.getNumSeats());
         showed_room_address.setText(room.getAddress());
+        if(room.getOccupied()){
+            showed_room_availability.setText("belegt");
+            showed_room_availability.setTextColor(Color.RED);
+        }else{
+            showed_room_availability.setText("Verfügbar");
+            showed_room_availability.setTextColor(Color.GREEN);
+        }
     }
 
     public void deleteClicked(View view){
@@ -38,11 +47,20 @@ public class MaInfoRoom extends AppCompatActivity {
     public void editClicked(View view){
         ViewSwitcher viewSwitcherName = findViewById(R.id.switchEditInfo);
         viewSwitcherName.showNext();
+        Room room = RoomsArray.getInstance().get(getIntent().getIntExtra("Position", -1));
         ConstraintLayout constraintLayout = viewSwitcherName.findViewById(R.id.maInfoTexts);
         EditText name=findViewById(R.id.edit_room_name),numSeats=findViewById(R.id.edit_room_numSeats),address=findViewById(R.id.edit_room_adress);
-        name.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getName());
-        numSeats.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getNumSeats());
-        address.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getAddress());
+        TextView editAvailability = findViewById(R.id.edit_room_availability);
+        name.setText(room.getName());
+        numSeats.setText(room.getNumSeats());
+        address.setText(room.getAddress());
+        if(room.getOccupied()){
+            editAvailability.setText("belegt");
+            editAvailability.setTextColor(Color.RED);
+        }else{
+            editAvailability.setText("Verfügbar");
+            editAvailability.setTextColor(Color.GREEN);
+        }
         Toast.makeText(getApplicationContext(),"bearbeiten...", Toast.LENGTH_SHORT).show();
     }
     public void saveClicked(View view){
