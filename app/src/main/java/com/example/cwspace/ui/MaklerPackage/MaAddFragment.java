@@ -15,6 +15,8 @@ import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 
 public class MaAddFragment extends Fragment {
+    EditText lol;
+
     @Nullable
     @org.jetbrains.annotations.Nullable
     @Override

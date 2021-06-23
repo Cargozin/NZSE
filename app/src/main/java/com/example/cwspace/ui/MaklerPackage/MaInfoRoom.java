@@ -1,15 +1,21 @@
 package com.example.cwspace.ui.MaklerPackage;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewSwitcher;
 
 import com.example.cwspace.Datenklassen.Room;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
+import com.example.cwspace.ui.activities.Makler;
 
 public class MaInfoRoom extends AppCompatActivity {
     TextView showed_room_name;
@@ -32,7 +38,19 @@ public class MaInfoRoom extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Raum wurde gelöscht", Toast.LENGTH_SHORT).show();
     }
     public void editClicked(View view){
-        RoomsArray.getInstance().get(getIntent().getIntExtra("Position", -1)).toggleBelegt();
-        Toast.makeText(getApplicationContext()," Raum wieder verfügbar", Toast.LENGTH_SHORT).show();
+        ViewSwitcher viewSwitcherName = findViewById(R.id.switchEditInfo);
+        viewSwitcherName.showNext();
+        ConstraintLayout constraintLayout = viewSwitcherName.findViewById(R.id.maInfoTexts);
+        EditText name=findViewById(R.id.edit_room_name),numSeats=findViewById(R.id.edit_room_numSeats),address=findViewById(R.id.edit_room_adress);
+        name.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getName());
+        numSeats.setText(RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getNumSeats());
+        Toast.makeText(getApplicationContext(),"bearbeiten...", Toast.LENGTH_SHORT).show();
+    }
+    public void saveClicked(View view){
+        EditText editName = findViewById(R.id.edit_room_name);
+        EditText editNumseats = findViewById(R.id.edit_room_numSeats);
+        EditText editAddress = findViewById(R.id.edit_room_adress);
+        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setName(editName.getText().toString());
+        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setNumSeats(Integer.parseInt(editNumseats.getText().toString()));
     }
 }

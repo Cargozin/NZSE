@@ -34,6 +34,13 @@ public class Room {
     }
     public int getBookings(){return bookings;}
 
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setNumSeats(int numSeats) {
+        this.numSeats = numSeats;
+    }
+
     public Room(String newName, int newNumSeats){
         name=newName;
         numSeats=newNumSeats;
