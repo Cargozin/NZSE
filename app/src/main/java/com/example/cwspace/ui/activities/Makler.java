@@ -63,6 +63,7 @@ public class Makler extends AppCompatActivity {
         }else{
             RoomsArray.getInstance().add(new Room(editName.getText().toString(),Integer.parseInt(editNumSeats.getText().toString()),editAddress.getText().toString()));
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+            RoomsArray.store(getApplicationContext());
         }
 
     }

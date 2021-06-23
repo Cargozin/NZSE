@@ -35,11 +35,21 @@ public class CwInfoRoom extends AppCompatActivity {
     }
 
     public void bookClicked(View view){
-        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setOccupied();
-        Toast.makeText(getApplicationContext(), "Raum ist jezt gebucht", Toast.LENGTH_SHORT).show();
+        if (RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getOccupied()){
+            Toast.makeText(getApplicationContext(),"Raum bereits belegt",Toast.LENGTH_SHORT).show();
+        }else{
+            RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setOccupied();
+            Toast.makeText(getApplicationContext(), "Raum ist jezt gebucht", Toast.LENGTH_SHORT).show();
+            RoomsArray.store(getApplicationContext());
+        }
     }
     public void unbookClicked(View view){
-        RoomsArray.getInstance().get(getIntent().getIntExtra("Position", -1)).setUnOccupied();
-        Toast.makeText(getApplicationContext()," Raum wieder verfügbar", Toast.LENGTH_SHORT).show();
+        if (RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getOccupied()){
+            RoomsArray.getInstance().get(getIntent().getIntExtra("Position", -1)).setUnOccupied();
+            Toast.makeText(getApplicationContext()," Raum wieder verfügbar", Toast.LENGTH_SHORT).show();
+            RoomsArray.store(getApplicationContext());
+        }else{
+            Toast.makeText(getApplicationContext(),"Raum bereits frei",Toast.LENGTH_SHORT).show();
+        }
     }
 }

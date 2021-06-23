@@ -43,6 +43,7 @@ public class MaInfoRoom extends AppCompatActivity {
     public void deleteClicked(View view){
         RoomsArray.getInstance().remove(getIntent().getIntExtra("Position",-1));
         Toast.makeText(getApplicationContext(), "Raum wurde gelöscht", Toast.LENGTH_SHORT).show();
+        RoomsArray.store(getApplicationContext());
     }
     public void editClicked(View view){
         ViewSwitcher viewSwitcherName = findViewById(R.id.switchEditInfo);
@@ -71,6 +72,7 @@ public class MaInfoRoom extends AppCompatActivity {
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setNumSeats(Integer.parseInt(editNumSeats.getText().toString()));
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setAddress(editAddress.getText().toString());
         Toast.makeText(getApplicationContext(),"gespeichert",Toast.LENGTH_SHORT).show();
+        RoomsArray.store(getApplicationContext());
         startActivity(new Intent(getApplicationContext(),Makler.class));
     }
 }

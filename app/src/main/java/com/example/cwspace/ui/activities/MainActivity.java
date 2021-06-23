@@ -20,15 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RoomsArray.load(getApplicationContext());
-        final Handler handler = new Handler();
-        final int delay = 60000; // 1000 milliseconds == 1 second
-
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                RoomsArray.store(getApplicationContext()); // Do your work here
-                handler.postDelayed(this, delay);
-            }
-        }, delay);
     }
 
     public void cwClicked(View view){
