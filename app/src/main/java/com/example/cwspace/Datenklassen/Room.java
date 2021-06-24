@@ -50,6 +50,7 @@ public class Room {
     public void setAddress(String newAddress) {
         address = newAddress;
     }
+    public void setImageFile(int newImageFile){imageFile = newImageFile;}
 
     public Room(String newName, int newNumSeats, String newAddress,int newImageFile){
         name=newName;

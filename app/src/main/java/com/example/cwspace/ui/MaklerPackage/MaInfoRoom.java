@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
@@ -65,13 +67,15 @@ public class MaInfoRoom extends AppCompatActivity {
         name.setText(room.getName());
         numSeats.setText(room.getNumSeats());
         address.setText(room.getAddress());
-        ImageView image = findViewById(R.id.edit_room_images);
-        if(room.getImageFile()==1){
-            image.setImageResource(R.drawable.roomsimage01);
-        }else  if(room.getImageFile()==2){
-            image.setImageResource(R.drawable.roomsimage02);
+        if (room.getImageFile()==1){
+            RadioButton radioButton=findViewById(R.id.radioButtonImage01);
+            radioButton.setChecked(true);
+        }else if(room.getImageFile()==2){
+            RadioButton radioButton=findViewById(R.id.radioButtonImage02);
+            radioButton.setChecked(true);
         }else if(room.getImageFile()==3){
-            image.setImageResource(R.drawable.roomsimage03);
+            RadioButton radioButton=findViewById(R.id.radioButtonImage03);
+            radioButton.setChecked(true);
         }
         if(room.getOccupied()){
             editAvailability.setText("belegt");
@@ -86,6 +90,17 @@ public class MaInfoRoom extends AppCompatActivity {
         EditText editName = findViewById(R.id.edit_room_name);
         EditText editNumSeats = findViewById(R.id.edit_room_numSeats);
         EditText editAddress = findViewById(R.id.edit_room_adress);
+        RadioGroup imageOptions = findViewById(R.id.imageSwitchMaEdit);
+        RadioButton selectedImageButton = findViewById(imageOptions.getCheckedRadioButtonId());
+        int imageId=0;
+        if (selectedImageButton == findViewById(R.id.radioButtonImage01)){
+            imageId = 1;
+        }else if(selectedImageButton == findViewById(R.id.radioButtonImage02)){
+            imageId = 2;
+        }else if(selectedImageButton == findViewById(R.id.radioButtonImage03)){
+            imageId = 3;
+        }
+        RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setImageFile(imageId);
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setName(editName.getText().toString());
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setNumSeats(Integer.parseInt(editNumSeats.getText().toString()));
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setAddress(editAddress.getText().toString());
