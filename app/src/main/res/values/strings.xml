@@ -12,11 +12,11 @@
     <string name="RoomNameOrNumber">RoomName or -Number</string>
     <string name="ReservedroomsText">Reserved Rooms</string>
     <string name="FavoriteroomsText">Favorite Rooms</string>
-    <string name="NameText">Name</string>
-    <string name="NumberSeats">Number Of Seats</string>
-    <string name="AddressText">Address</string>
-    <string name="AvailabilityText">Availability</string>
-    <string name="ImageText">Image</string>
+    <string name="NameText">Name:</string>
+    <string name="NumberSeats">Number Of Seats:</string>
+    <string name="AddressText">Address:</string>
+    <string name="AvailabilityText">Availability:</string>
+    <string name="ImageText">Image:</string>
     <string name="ReserveText">Reserve</string>
     <string name="SetFreeText">Set Free</string>
     <string name="OfferedRoomsText">Offered Rooms</string>
@@ -43,4 +43,5 @@
     <string name="ExampleNameText">Room C17E04</string>
     <string name="ExampleNumSeatsText" translatable="false">200</string>
     <string name="ExampleAddressText" translatable="false">Mozart str. 345</string>
+    <string name="MessageArraySavedText">Have Been Saved</string>
 </resources>

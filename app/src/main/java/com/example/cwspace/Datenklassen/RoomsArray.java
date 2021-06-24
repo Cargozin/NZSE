@@ -52,7 +52,7 @@ public class RoomsArray {
             myOutWriter.append(jsonarray.toString());
             myOutWriter.close();
             fOut.close();
-            Toast.makeText(c, RoomsArray.getInstance().size() + " are been saved!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, RoomsArray.getInstance().size() +" "+ c.getString(R.string.MessageArraySavedText), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(c, e.getMessage(),
                     Toast.LENGTH_SHORT).show();
@@ -73,7 +73,7 @@ public class RoomsArray {
                 allOutputs.append(line);
             }
             JSONArray jsonArray = new JSONArray(allOutputs.toString());
-            Toast.makeText(c, R.string.NumberOfRoomsText + ": " + jsonArray.length(), Toast.LENGTH_LONG).show();
+            Toast.makeText(c, c.getString(R.string.NumberOfRoomsText) + ": " + jsonArray.length(), Toast.LENGTH_LONG).show();
 
             Room room;
             for (int i = 0; i < jsonArray.length(); i++) {

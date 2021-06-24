@@ -11,11 +11,11 @@
     <string name="RoomNameOrNumber">Raumname oder -nummer</string>
     <string name="ReservedroomsText">gebuchte Räume</string>
     <string name="FavoriteroomsText">Favoriten</string>
-    <string name="NameText">Name</string>
-    <string name="NumberSeats">Anzahl Sitzplätze</string>
-    <string name="AddressText">Adresse</string>
-    <string name="AvailabilityText">Verfügbarkeit</string>
-    <string name="ImageText">Bild</string>
+    <string name="NameText">Name:</string>
+    <string name="NumberSeats">Anzahl Sitzplätze:</string>
+    <string name="AddressText">Adresse:</string>
+    <string name="AvailabilityText">Verfügbarkeit:</string>
+    <string name="ImageText">Bild:</string>
     <string name="ReserveText">buchen</string>
     <string name="SetFreeText">freigeben</string>
     <string name="OfferedRoomsText">angebotene Räume</string>
@@ -30,7 +30,7 @@
     <string name="ErrorNoNameText">Namensfeld ist leer</string>
     <string name="ErrorNoAddress">Adressfeld ist leer</string>
     <string name="ErrorNoPicture">kein Bild ausgewählt</string>
-    <string name="ErrorNoNumSeats">Anzahl Sitzplätze is leer</string>
+    <string name="ErrorNoNumSeats">Anzahl Sitzplätze ist leer</string>
     <string name="SavedText">gespeichert</string>
     <string name="ErrorRoomOccupiedText">Raum bereits belegt</string>
     <string name="ErrorRoomFree">Raum bereits frei</string>
@@ -39,4 +39,5 @@
     <string name="MessageRoomDeletedText">Raum wurde gelöscht</string>
     <string name="MessageRoomNowEditText">bearbeiten...</string>
     <string name="ExampleNameText">Raum C17E04</string>
+    <string name="MessageArraySavedText">wurden gespeichert</string>
 </resources>
