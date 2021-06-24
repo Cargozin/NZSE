@@ -55,7 +55,7 @@ public class Makler extends AppCompatActivity {
         EditText editName=findViewById(R.id.new_room_name);
         EditText editNumSeats=findViewById(R.id.editTextNumberSeats);
         EditText editAddress = findViewById(R.id.edit_address);
-        RadioGroup imageOptions = findViewById(R.id.decisionImage);
+        RadioGroup imageOptions = findViewById(R.id.imageSwitchMaAdd);
         RadioButton selectedImageButton = findViewById(imageOptions.getCheckedRadioButtonId());
         int imageId=0;
         if (selectedImageButton == findViewById(R.id.radioButtonImage01)){
