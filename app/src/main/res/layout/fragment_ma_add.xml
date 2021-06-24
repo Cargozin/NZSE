@@ -136,7 +136,7 @@
         tools:ignore="ContentDescription" />
 
     <RadioGroup
-        android:id="@+id/decisionImage"
+        android:id="@+id/imageSwitchMaAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="40dp"
