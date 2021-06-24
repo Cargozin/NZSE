@@ -17,7 +17,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cwspace.Datenklassen.Room;
-import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
 
 import java.util.ArrayList;

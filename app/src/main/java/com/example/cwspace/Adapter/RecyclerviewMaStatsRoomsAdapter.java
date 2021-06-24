@@ -9,9 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.Filter;
-import android.widget.Filterable;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,15 +26,15 @@ public class RecyclerviewMaStatsRoomsAdapter extends RecyclerView.Adapter<Recycl
 
     public class RoomsViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
-        TextView itemname, itemnumseats;
+        TextView itemName, itemNumSeats;
         ImageView bookedImage;
         TextView bookings;
 
         RoomsViewHolder(View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.itemimage);
-            itemname = itemView.findViewById(R.id.itemname);
-            itemnumseats = itemView.findViewById(R.id.itemnumseats);
+            itemName = itemView.findViewById(R.id.itemname);
+            itemNumSeats = itemView.findViewById(R.id.itemnumseats);
             bookedImage = itemView.findViewById(R.id.isBooked);
             bookings = itemView.findViewById(R.id.booking);
 
@@ -76,8 +73,8 @@ public class RecyclerviewMaStatsRoomsAdapter extends RecyclerView.Adapter<Recycl
         Room room = mArrayRooms.get(position);
 
         //holder.image.setImageDrawable(room.getImage());
-        holder.itemname.setText(room.getName());
-        holder.itemnumseats.setText(room.getNumSeats());
+        holder.itemName.setText(room.getName());
+        holder.itemNumSeats.setText(room.getNumSeats());
         holder.bookings.setText(room.getBookings());
         if(room.getImageFile()==1){
             holder.image.setImageResource(R.drawable.roomsimage01);

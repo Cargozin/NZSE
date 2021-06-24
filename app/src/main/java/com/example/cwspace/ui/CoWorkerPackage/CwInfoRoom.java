@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.example.cwspace.Datenklassen.Room;
 import com.example.cwspace.Datenklassen.RoomsArray;
 import com.example.cwspace.R;
-import com.example.cwspace.ui.MaklerPackage.MaInfoRoom;
 
 public class CwInfoRoom extends AppCompatActivity {
     @Override
@@ -37,20 +36,20 @@ public class CwInfoRoom extends AppCompatActivity {
         showed_room_numSeats.setText(room.getNumSeats());
         showed_room_address.setText(room.getAddress());
         if(room.getOccupied()){
-            showed_availability.setText("belegt");
+            showed_availability.setText(R.string.OccupiedText);
             showed_availability.setTextColor(Color.RED);
         }else{
-            showed_availability.setText("Verfügbar");
+            showed_availability.setText(R.string.AvailableText);
             showed_availability.setTextColor(Color.GREEN);
         }
     }
 
     public void bookClicked(View view){
         if (RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getOccupied()){
-            Toast.makeText(getApplicationContext(),"Raum bereits belegt",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.ErrorRoomOccupiedText,Toast.LENGTH_SHORT).show();
         }else{
             RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setOccupied();
-            Toast.makeText(getApplicationContext(), "Raum ist jezt gebucht", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.MessageRoomNowOccupiedText, Toast.LENGTH_SHORT).show();
             RoomsArray.store(getApplicationContext());
             Intent intent = new Intent(getApplicationContext(), CwInfoRoom.class);
             intent.putExtra("Position",getIntent().getIntExtra("Position",-1));
@@ -60,13 +59,13 @@ public class CwInfoRoom extends AppCompatActivity {
     public void unbookClicked(View view){
         if (RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).getOccupied()){
             RoomsArray.getInstance().get(getIntent().getIntExtra("Position", -1)).setUnOccupied();
-            Toast.makeText(getApplicationContext()," Raum wieder verfügbar", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.MessageRoomNowFree, Toast.LENGTH_SHORT).show();
             RoomsArray.store(getApplicationContext());
             Intent intent = new Intent(getApplicationContext(), CwInfoRoom.class);
             intent.putExtra("Position",getIntent().getIntExtra("Position",-1));
             startActivity(intent);
         }else{
-            Toast.makeText(getApplicationContext(),"Raum bereits frei",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.ErrorRoomFree,Toast.LENGTH_SHORT).show();
         }
     }
 }

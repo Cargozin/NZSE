@@ -23,8 +23,6 @@ public class CwHomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_cw_home,container,false);
-        //RoomsArray.getInstance().add(new Raum("test",23));
-        //RoomsArray.getInstance().add(new Raum("test2",256));
         recyclerView = root.findViewById(R.id.show_all_roomlist);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);

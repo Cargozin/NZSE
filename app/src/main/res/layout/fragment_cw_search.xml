@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/title_cwsearchinput"
+        android:hint="@string/ExampleNameText"
         app:layout_constraintEnd_toStartOf="@+id/search_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/searchRequest"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_search_24" />
+        app:srcCompat="@drawable/ic_baseline_search_24"
+        tools:ignore="ContentDescription" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/show_searched_roomlist"

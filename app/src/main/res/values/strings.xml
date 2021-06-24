@@ -1,27 +1,46 @@
 <resources>
-    <string name="app_name">CoWorkerSpace</string>
 
-    <string name="title_coworker" translatable="false">CoWorker</string>
-    <string name="title_makler">Makler</string>
-    <string name="title_anmelden">Anmelden</string>
-    <string name="title_startup">Willkommen!</string>
-
-    <string name="title_cwsearchinput">Raumname/-nummer</string>
-
-    <string name="allrooms">Alle Räume</string>
-
-    <string name="numSeatsTxt">Anzahl an Sitzplätzen:</string>
-    <string name="nametxt">Name:</string>
-    <string name="save">Save</string>
-    <string name="booked_rooms">Gebuchte Räume</string>
-    <string name="favorites">Favoriten</string>
-    <string name="offered_roomstxt">Angebotene Räume</string>
-    <string name="adresstxt">Adresse:</string>
-    <string name="imagestxt">Bilder:</string>
-    <string name="bookingtxt">Buchen</string>
-    <string name="unbooktxt">Freigeben</string>
-    <string name="edittxt">Bearbeiten</string>
-    <string name="deletetxt">Löschen</string>
-    <string name="stats_roomstxt">Beliebte Räume</string>
-
+    <string name="welcomeText">Welcome!</string>
+    <string name="loginText">Login</string>
+    <string name="CoWorkerText" translatable="false">CoWorker</string>
+    <string name="brokerText">Broker</string>
+    <string name="allRoomsText">all Rooms</string>
+    <string name="detailsText">Details</string>
+    <string name="HomeText">Home</string>
+    <string name="SearchText">Search</string>
+    <string name="StatisticsText">Statistics</string>
+    <string name="RoomNameOrNumber">RoomName or -Number</string>
+    <string name="ReservedroomsText">Reserved Rooms</string>
+    <string name="FavoriteroomsText">Favorite Rooms</string>
+    <string name="NameText">Name</string>
+    <string name="NumberSeats">Number Of Seats</string>
+    <string name="AddressText">Address</string>
+    <string name="AvailabilityText">Availability</string>
+    <string name="ImageText">Image</string>
+    <string name="ReserveText">Reserve</string>
+    <string name="SetFreeText">Set Free</string>
+    <string name="OfferedRoomsText">Offered Rooms</string>
+    <string name="AddText">Add</string>
+    <string name="SaveText">Save</string>
+    <string name="TrendingRoomsText">Trending Rooms</string>
+    <string name="AvailableText">Available</string>
+    <string name="OccupiedText">Occupied</string>
+    <string name="EditText">Edit</string>
+    <string name="DeleteText">Delete</string>
+    <string name="AppName" translatable="false">cwspace</string>
+    <string name="NumberOfRoomsText">Number of Rooms</string>
+    <string name="ErrorNoNameText">Name Is Empty</string>
+    <string name="ErrorNoAddress">Address Is Empty</string>
+    <string name="ErrorNoPicture">No Image Picked</string>
+    <string name="ErrorNoNumSeats">Number of Seats is Empty</string>
+    <string name="SavedText">Saved</string>
+    <string name="ErrorRoomOccupiedText">Room Already Occupied</string>
+    <string name="ErrorRoomFree">Room Already Free</string>
+    <string name="MessageRoomNowOccupiedText">Room Is Now Occupied</string>
+    <string name="MessageRoomNowFree">Room Is Now Free</string>
+    <string name="MessageRoomDeletedText">Room Was Deleted</string>
+    <string name="MessageRoomNowEditText">Editing...</string>
+    <string name="ExampleNameText">Room C17E04</string>
+    <string name="ExampleNumSeatsText" translatable="false">200</string>
+    <string name="ExampleAddressText" translatable="false">Mozart str. 345</string>
 </resources>

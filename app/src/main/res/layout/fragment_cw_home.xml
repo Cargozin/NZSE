@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@id/allrooms"
-        android:text="@string/allrooms"
+        android:text="@string/allRoomsText"
         android:textSize="30sp"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"

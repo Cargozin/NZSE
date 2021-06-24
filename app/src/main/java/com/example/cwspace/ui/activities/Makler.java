@@ -67,19 +67,19 @@ public class Makler extends AppCompatActivity {
         }
 
         if (editName.getText().toString().equals("")){
-            Toast.makeText(this,"Name is Empty",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.ErrorNoNameText,Toast.LENGTH_SHORT).show();
         }
         if (editAddress.getText().toString().equals("")){
-            Toast.makeText(this,"Address is Empty",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.ErrorNoAddress,Toast.LENGTH_SHORT).show();
         }
         if (imageId==0){
-            Toast.makeText(getApplicationContext(),"wählen sie ein Bild aus",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.ErrorNoPicture,Toast.LENGTH_SHORT).show();
         }
         if (editNumSeats.getText().toString().length()==0){
-            Toast.makeText(this, "NumSeats is Empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.ErrorNoNumSeats, Toast.LENGTH_SHORT).show();
         }else{
             RoomsArray.getInstance().add(new Room(editName.getText().toString(),Integer.parseInt(editNumSeats.getText().toString()),editAddress.getText().toString(),imageId));
-            Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.SavedText, Toast.LENGTH_SHORT).show();
             RoomsArray.store(getApplicationContext());
             startActivity(new Intent(getApplicationContext(),Makler.class));
         }

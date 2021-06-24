@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/offered_rooms"
-        android:text="@string/offered_roomstxt"
+        android:text="@string/OfferedRoomsText"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

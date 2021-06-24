@@ -18,7 +18,6 @@ import com.example.cwspace.R;
 public class CwSearchFragment extends Fragment {
     View root;
     RecyclerView recyclerView;
-    ImageButton searchButton;
     @Nullable
     @org.jetbrains.annotations.Nullable
     @Override
@@ -30,9 +29,5 @@ public class CwSearchFragment extends Fragment {
         RecyclerviewCWRoomsAdapter adapter = new RecyclerviewCWRoomsAdapter(getContext(),RoomsArray.getInstance());
         recyclerView.setAdapter(adapter);
         return root;
-    }
-
-    public void searchClicked(View view){
-        
     }
 }

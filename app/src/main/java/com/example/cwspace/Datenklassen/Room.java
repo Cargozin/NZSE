@@ -1,6 +1,5 @@
 package com.example.cwspace.Datenklassen;
 
-import android.location.Address;
 
 import org.json.JSONObject;
 
@@ -10,14 +9,8 @@ public class Room {
     boolean occupied,fav;
     int bookings,imageFile;
 
-
-
     public void toggleFav(){
-        if(fav){
-            fav = false;
-        }else{
-            fav = true;
-        }
+        fav = !fav;
     }
 
     public boolean getOccupied(){return occupied;}
@@ -73,7 +66,7 @@ public class Room {
         catch (Exception e)
         {
             name = "Fail";
-            address = "Bakdad Fischmarkt";
+            address = "Fail";
             numSeats = 0;
             bookings = 0;
             occupied = false;

@@ -43,17 +43,17 @@ public class MaInfoRoom extends AppCompatActivity {
             showed_room_image.setImageResource(R.drawable.roomsimage03);
         }
         if(room.getOccupied()){
-            showed_room_availability.setText("belegt");
+            showed_room_availability.setText(R.string.OccupiedText);
             showed_room_availability.setTextColor(Color.RED);
         }else{
-            showed_room_availability.setText("Verfügbar");
+            showed_room_availability.setText(R.string.AvailableText);
             showed_room_availability.setTextColor(Color.GREEN);
         }
     }
 
     public void deleteClicked(View view){
         RoomsArray.getInstance().remove(getIntent().getIntExtra("Position",-1));
-        Toast.makeText(getApplicationContext(), "Raum wurde gelöscht", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), R.string.MessageRoomDeletedText, Toast.LENGTH_SHORT).show();
         RoomsArray.store(getApplicationContext());
         startActivity(new Intent(getApplicationContext(),Makler.class));
     }
@@ -78,13 +78,13 @@ public class MaInfoRoom extends AppCompatActivity {
             radioButton.setChecked(true);
         }
         if(room.getOccupied()){
-            editAvailability.setText("belegt");
+            editAvailability.setText(R.string.OccupiedText);
             editAvailability.setTextColor(Color.RED);
         }else{
-            editAvailability.setText("Verfügbar");
+            editAvailability.setText(R.string.AvailableText);
             editAvailability.setTextColor(Color.GREEN);
         }
-        Toast.makeText(getApplicationContext(),"bearbeiten...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),R.string.MessageRoomNowEditText, Toast.LENGTH_SHORT).show();
     }
     public void saveClicked(View view){
         EditText editName = findViewById(R.id.edit_room_name);
@@ -104,7 +104,7 @@ public class MaInfoRoom extends AppCompatActivity {
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setName(editName.getText().toString());
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setNumSeats(Integer.parseInt(editNumSeats.getText().toString()));
         RoomsArray.getInstance().get(getIntent().getIntExtra("Position",-1)).setAddress(editAddress.getText().toString());
-        Toast.makeText(getApplicationContext(),"gespeichert",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),R.string.SavedText,Toast.LENGTH_SHORT).show();
         RoomsArray.store(getApplicationContext());
         startActivity(new Intent(getApplicationContext(),Makler.class));
     }

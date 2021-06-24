@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcomeText">Willkommen!</string>
+    <string name="loginText">Anmelden</string>
+    <string name="brokerText">Makler</string>
+    <string name="allRoomsText">Alle Räume</string>
+    <string name="detailsText">Details</string>
+    <string name="HomeText">Übersicht</string>
+    <string name="SearchText">Suche</string>
+    <string name="StatisticsText">Statistik</string>
+    <string name="RoomNameOrNumber">Raumname oder -nummer</string>
+    <string name="ReservedroomsText">gebuchte Räume</string>
+    <string name="FavoriteroomsText">Favoriten</string>
+    <string name="NameText">Name</string>
+    <string name="NumberSeats">Anzahl Sitzplätze</string>
+    <string name="AddressText">Adresse</string>
+    <string name="AvailabilityText">Verfügbarkeit</string>
+    <string name="ImageText">Bild</string>
+    <string name="ReserveText">buchen</string>
+    <string name="SetFreeText">freigeben</string>
+    <string name="OfferedRoomsText">angebotene Räume</string>
+    <string name="AddText">hinzufügen</string>
+    <string name="SaveText">speichern</string>
+    <string name="TrendingRoomsText">beliebte Räume</string>
+    <string name="AvailableText">verfügbar</string>
+    <string name="OccupiedText">belegt</string>
+    <string name="EditText">bearbeiten</string>
+    <string name="DeleteText">lösch</string>
+    <string name="NumberOfRoomsText">Anzahl der Räume</string>
+    <string name="ErrorNoNameText">Namensfeld ist leer</string>
+    <string name="ErrorNoAddress">Adressfeld ist leer</string>
+    <string name="ErrorNoPicture">kein Bild ausgewählt</string>
+    <string name="ErrorNoNumSeats">Anzahl Sitzplätze is leer</string>
+    <string name="SavedText">gespeichert</string>
+    <string name="ErrorRoomOccupiedText">Raum bereits belegt</string>
+    <string name="ErrorRoomFree">Raum bereits frei</string>
+    <string name="MessageRoomNowOccupiedText">Raum ist jetzt belegt</string>
+    <string name="MessageRoomNowFree">Raum ist jetzt verfügbar</string>
+    <string name="MessageRoomDeletedText">Raum wurde gelöscht</string>
+    <string name="MessageRoomNowEditText">bearbeiten...</string>
+    <string name="ExampleNameText">Raum C17E04</string>
+</resources>

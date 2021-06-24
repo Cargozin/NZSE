@@ -1,8 +1,9 @@
 package com.example.cwspace.Datenklassen;
 
 import android.content.Context;
-import android.os.Environment;
 import android.widget.Toast;
+
+import com.example.cwspace.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,7 +21,7 @@ public class RoomsArray {
     private static final ArrayList<Room> Arraylist = new ArrayList<>();
 
     private RoomsArray() {
-        System.out.println("Objekt gebildet...");
+        System.out.println("Object created...");
     }
 
     public static ArrayList<Room> getInstance() {
@@ -35,14 +36,14 @@ public class RoomsArray {
     }
 
     public static void store (Context c) {
-        String fname="storedrooms.json";
+        String fileName="storedRooms.json";
         try {
-            File myFile = new File( c.getApplicationContext().getExternalFilesDir("cwspace").getPath() +"/"+ fname);
+            File myFile = new File( c.getApplicationContext().getExternalFilesDir("cwspace").getPath() +"/"+ fileName);
             System.out.println ("*** Store:" + myFile.toString());
             FileOutputStream fOut = new FileOutputStream(myFile);
             OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
             JSONArray jsonarray = new JSONArray();
-            for (Room p: RoomsArray.getInstance()) // Schleife über alle Elemente
+            for (Room p: RoomsArray.getInstance()) // Loop over all Elements
             {
                 JSONObject object;
                 object = p.store();
@@ -51,7 +52,7 @@ public class RoomsArray {
             myOutWriter.append(jsonarray.toString());
             myOutWriter.close();
             fOut.close();
-            Toast.makeText(c, RoomsArray.getInstance().size() + " werden gespeichert!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, RoomsArray.getInstance().size() + " are been saved!", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(c, e.getMessage(),
                     Toast.LENGTH_SHORT).show();
@@ -60,19 +61,19 @@ public class RoomsArray {
 
     public static void load(Context c) {
 
-        String fname = "storedrooms.json";
+        String fileName = "storedRooms.json";
         RoomsArray.getInstance().clear();
-        StringBuilder alleausgaben = new StringBuilder();
+        StringBuilder allOutputs = new StringBuilder();
         try {
-            File myFile = new File( c.getApplicationContext().getExternalFilesDir("cwspace").getPath() +"/"+ fname);
+            File myFile = new File( c.getApplicationContext().getExternalFilesDir("cwspace").getPath() +"/"+ fileName);
             FileInputStream fIn = new FileInputStream(myFile);
             BufferedReader myReader = new BufferedReader(new InputStreamReader(fIn, StandardCharsets.UTF_8.name()));
             String line;
             while ((line = myReader.readLine()) != null) {
-                alleausgaben.append(line);
+                allOutputs.append(line);
             }
-            JSONArray jsonArray = new JSONArray(alleausgaben.toString());
-            Toast.makeText(c, "Anzahl Räume: " + jsonArray.length(), Toast.LENGTH_LONG).show();
+            JSONArray jsonArray = new JSONArray(allOutputs.toString());
+            Toast.makeText(c, R.string.NumberOfRoomsText + ": " + jsonArray.length(), Toast.LENGTH_LONG).show();
 
             Room room;
             for (int i = 0; i < jsonArray.length(); i++) {

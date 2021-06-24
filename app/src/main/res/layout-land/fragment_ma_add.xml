@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="@string/nametxt"
+        android:text="@string/NameText"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/new_room_name"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,10 +24,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="50dp"
         android:inputType="text"
+        android:hint="@string/ExampleNameText"
         app:layout_constraintBottom_toBottomOf="@+id/maName"
         app:layout_constraintEnd_toStartOf="@+id/imageSwitchMaAdd"
         app:layout_constraintStart_toEndOf="@+id/maName"
-        app:layout_constraintTop_toTopOf="@+id/maName" />
+        app:layout_constraintTop_toTopOf="@+id/maName"
+        tools:ignore="Autofill,LabelFor" />
 
     <Button
         android:id="@+id/save_button"
@@ -36,7 +39,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:onClick="maSaveClicked"
-        android:text="@string/save"
+        android:text="@string/SaveText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -47,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="@string/numSeatsTxt"
+        android:text="@string/NumberSeats"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/editTextNumberSeats"
         app:layout_constraintHorizontal_bias="0.5"
@@ -57,7 +60,7 @@
     <EditText
         android:id="@+id/editTextNumberSeats"
         android:layout_width="0dp"
-        android:hint="123"
+        android:hint="@string/ExampleNumSeatsText"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="50dp"
@@ -66,12 +69,13 @@
         app:layout_constraintEnd_toStartOf="@+id/imageSwitchMaAdd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/numSeatsTxt"
-        app:layout_constraintTop_toTopOf="@+id/numSeatsTxt" />
+        app:layout_constraintTop_toTopOf="@+id/numSeatsTxt"
+        tools:ignore="Autofill" />
     <TextView
         android:id="@+id/addressTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/adresstxt"
+        android:text="@string/AddressText"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
         android:textSize="20sp"
@@ -88,7 +92,8 @@
         app:layout_constraintStart_toEndOf="@+id/addressTxt"
         app:layout_constraintTop_toBottomOf="@+id/numSeatsTxt"
         app:layout_constraintEnd_toStartOf="@+id/imageSwitchMaAdd"
-        android:hint="Baum str. 73"/>
+        android:hint="@string/ExampleAddressText"
+        tools:ignore="Autofill,TextFields" />
     <ImageView
         android:id="@+id/image01"
         android:layout_width="100dp"
@@ -96,21 +101,24 @@
         android:layout_marginEnd="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/roomsimage01"/>
+        android:src="@drawable/roomsimage01"
+        tools:ignore="ContentDescription" />
     <ImageView
         android:id="@+id/image02"
         android:layout_width="100dp"
         android:layout_height="80dp"
         app:layout_constraintStart_toStartOf="@+id/image01"
         app:layout_constraintTop_toBottomOf="@+id/image01"
-        android:src="@drawable/roomsimage02"/>
+        android:src="@drawable/roomsimage02"
+        tools:ignore="ContentDescription" />
     <ImageView
         android:id="@+id/image03"
         android:layout_width="100dp"
         android:layout_height="80dp"
         app:layout_constraintStart_toStartOf="@+id/image01"
         app:layout_constraintTop_toBottomOf="@+id/image02"
-        android:src="@drawable/roomsimage03"/>
+        android:src="@drawable/roomsimage03"
+        tools:ignore="ContentDescription" />
     <RadioGroup
         android:id="@+id/imageSwitchMaAdd"
         android:layout_width="wrap_content"
