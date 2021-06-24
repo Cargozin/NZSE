@@ -31,7 +31,7 @@ public class RecyclerviewSearchRoomsAdapter extends RecyclerView.Adapter<Recycle
 
         RoomsViewHolder(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.itemimage);
+            image = itemView.findViewById(R.id.itemImage);
             itemname = itemView.findViewById(R.id.itemname);
             itemnumseats = itemView.findViewById(R.id.itemnumseats);
             favimage = itemView.findViewById(R.id.favButton);
@@ -86,11 +86,16 @@ public class RecyclerviewSearchRoomsAdapter extends RecyclerView.Adapter<Recycle
     @Override
     public void onBindViewHolder(RoomsViewHolder holder, int position) {
         Room room = mArrayRooms.get(position);
-
-        //holder.image.setImageDrawable(room.getImage());
         holder.itemname.setText(room.getName());
         holder.itemnumseats.setText(room.getNumSeats());
 
+        if(room.getImageFile()==1){
+            holder.image.setImageResource(R.drawable.roomsimage01);
+        }else  if(room.getImageFile()==2){
+            holder.image.setImageResource(R.drawable.roomsimage02);
+        }else if(room.getImageFile()==3){
+            holder.image.setImageResource(R.drawable.roomsimage03);
+        }
         if (room.getFav()) {
             holder.favimage.setImageResource(R.drawable.ic_fav);
         } else{

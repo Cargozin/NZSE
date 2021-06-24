@@ -8,7 +8,7 @@ public class Room {
     String name,address;
     int numSeats;
     boolean occupied,fav;
-    int bookings;
+    int bookings,imageFile;
 
 
 
@@ -32,6 +32,7 @@ public class Room {
     public String getAddress() {
         return address;
     }
+    public int getImageFile(){return imageFile;}
 
     public void setName(String name) {
         this.name = name;
@@ -50,12 +51,13 @@ public class Room {
         address = newAddress;
     }
 
-    public Room(String newName, int newNumSeats, String newAddress){
+    public Room(String newName, int newNumSeats, String newAddress,int newImageFile){
         name=newName;
         numSeats=newNumSeats;
         address = newAddress;
         occupied =false;
         bookings = 0;
+        imageFile = newImageFile;
     }
     public Room (JSONObject jsonObject) {
         try {
@@ -65,6 +67,7 @@ public class Room {
             bookings = jsonObject.getInt("bookings");
             occupied = jsonObject.getBoolean("isBooked");
             fav = jsonObject.getBoolean("isFavorite");
+            imageFile = jsonObject.getInt("imageFile");
         }
         catch (Exception e)
         {
@@ -74,6 +77,7 @@ public class Room {
             bookings = 0;
             occupied = false;
             fav = false;
+            imageFile = 0;
         }
     }
 
@@ -86,6 +90,7 @@ public class Room {
             object.put("isBooked", this.occupied);
             object.put("isFavorite",this.fav);
             object.put("bookings",this.bookings);
+            object.put("imageFile",this.imageFile);
         } catch (Exception e) {
             System.out.println ( e.getMessage());
         }

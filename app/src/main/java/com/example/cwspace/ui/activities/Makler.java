@@ -3,9 +3,12 @@ package com.example.cwspace.ui.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.cwspace.Datenklassen.Room;
@@ -52,18 +55,33 @@ public class Makler extends AppCompatActivity {
         EditText editName=findViewById(R.id.new_room_name);
         EditText editNumSeats=findViewById(R.id.editTextNumberSeats);
         EditText editAddress = findViewById(R.id.edit_address);
-        if (editName.getText().toString().length()==0){
+        RadioGroup imageOptions = findViewById(R.id.decisionImage);
+        RadioButton selectedImageButton = findViewById(imageOptions.getCheckedRadioButtonId());
+        int imageId=0;
+        if (selectedImageButton == findViewById(R.id.radioButtonImage01)){
+            imageId = 1;
+        }else if(selectedImageButton == findViewById(R.id.radioButtonImage02)){
+            imageId = 2;
+        }else if(selectedImageButton == findViewById(R.id.radioButtonImage03)){
+            imageId = 3;
+        }
+
+        if (editName.getText().toString().equals("")){
             Toast.makeText(this,"Name is Empty",Toast.LENGTH_SHORT).show();
         }
-        if (editAddress.getText().toString().length()==0){
+        if (editAddress.getText().toString().equals("")){
             Toast.makeText(this,"Address is Empty",Toast.LENGTH_SHORT).show();
+        }
+        if (imageId==0){
+            Toast.makeText(getApplicationContext(),"wählen sie ein Bild aus",Toast.LENGTH_SHORT).show();
         }
         if (editNumSeats.getText().toString().length()==0){
             Toast.makeText(this, "NumSeats is Empty", Toast.LENGTH_SHORT).show();
         }else{
-            RoomsArray.getInstance().add(new Room(editName.getText().toString(),Integer.parseInt(editNumSeats.getText().toString()),editAddress.getText().toString()));
+            RoomsArray.getInstance().add(new Room(editName.getText().toString(),Integer.parseInt(editNumSeats.getText().toString()),editAddress.getText().toString(),imageId));
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
             RoomsArray.store(getApplicationContext());
+            startActivity(new Intent(getApplicationContext(),Makler.class));
         }
 
     }

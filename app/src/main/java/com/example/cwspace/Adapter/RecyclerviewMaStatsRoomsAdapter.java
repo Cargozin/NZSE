@@ -79,6 +79,13 @@ public class RecyclerviewMaStatsRoomsAdapter extends RecyclerView.Adapter<Recycl
         holder.itemname.setText(room.getName());
         holder.itemnumseats.setText(room.getNumSeats());
         holder.bookings.setText(room.getBookings());
+        if(room.getImageFile()==1){
+            holder.image.setImageResource(R.drawable.roomsimage01);
+        }else  if(room.getImageFile()==2){
+            holder.image.setImageResource(R.drawable.roomsimage02);
+        }else if(room.getImageFile()==3){
+            holder.image.setImageResource(R.drawable.roomsimage03);
+        }
         if (room.getOccupied()){
             holder.bookedImage.setImageResource(R.drawable.ic_baseline_bookmark_24);
             holder.bookedImage.setColorFilter(Color.RED);

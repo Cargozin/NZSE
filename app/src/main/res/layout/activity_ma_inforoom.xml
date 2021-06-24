@@ -104,7 +104,7 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="250dp"
-                android:id="@+id/edit_room_images"
+                android:id="@+id/showed_room_images"
                 android:src="@drawable/ic_baseline_add_photo_alternate_24"
                 app:layout_constraintTop_toBottomOf="@id/showed_room_imagestxt"
                 app:layout_constraintStart_toStartOf="parent"
@@ -225,7 +225,7 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="250dp"
-                android:id="@+id/showed_room_images"
+                android:id="@+id/edit_room_images"
                 android:src="@drawable/ic_baseline_add_photo_alternate_24"
                 app:layout_constraintTop_toBottomOf="@id/showed_room_imagestxt0"
                 app:layout_constraintStart_toStartOf="parent"

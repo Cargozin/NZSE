@@ -33,7 +33,7 @@ public class RecyclerviewBookedRoomsAdapter extends RecyclerView.Adapter<Recycle
 
         RoomsViewHolder(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.itemimage);
+            image = itemView.findViewById(R.id.itemImage);
             itemname = itemView.findViewById(R.id.itemname);
             itemnumseats = itemView.findViewById(R.id.itemnumseats);
             favimage = itemView.findViewById(R.id.favButton);
@@ -92,6 +92,14 @@ public class RecyclerviewBookedRoomsAdapter extends RecyclerView.Adapter<Recycle
         //holder.image.setImageDrawable(room.getImage());
         holder.itemname.setText(room.getName());
         holder.itemnumseats.setText(room.getNumSeats());
+
+        if(room.getImageFile()==1){
+            holder.image.setImageResource(R.drawable.roomsimage01);
+        }else  if(room.getImageFile()==2){
+            holder.image.setImageResource(R.drawable.roomsimage02);
+        }else if(room.getImageFile()==3){
+            holder.image.setImageResource(R.drawable.roomsimage03);
+        }
         if (room.getOccupied()){
             holder.bookedImage.setImageResource(R.drawable.ic_baseline_bookmark_24);
             holder.bookedImage.setColorFilter(Color.RED);

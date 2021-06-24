@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
@@ -28,9 +29,17 @@ public class MaInfoRoom extends AppCompatActivity {
         TextView showed_room_numSeats = findViewById(R.id.showed_room_numSeats);
         TextView showed_room_address = findViewById(R.id.showed_room_address);
         TextView showed_room_availability = findViewById(R.id.showed_room_availability);
+        ImageView showed_room_image = findViewById(R.id.showed_room_images);
         showed_room_name.setText(room.getName());
         showed_room_numSeats.setText(room.getNumSeats());
         showed_room_address.setText(room.getAddress());
+        if(room.getImageFile()==1){
+            showed_room_image.setImageResource(R.drawable.roomsimage01);
+        }else  if(room.getImageFile()==2){
+            showed_room_image.setImageResource(R.drawable.roomsimage02);
+        }else if(room.getImageFile()==3){
+            showed_room_image.setImageResource(R.drawable.roomsimage03);
+        }
         if(room.getOccupied()){
             showed_room_availability.setText("belegt");
             showed_room_availability.setTextColor(Color.RED);
@@ -44,6 +53,7 @@ public class MaInfoRoom extends AppCompatActivity {
         RoomsArray.getInstance().remove(getIntent().getIntExtra("Position",-1));
         Toast.makeText(getApplicationContext(), "Raum wurde gelöscht", Toast.LENGTH_SHORT).show();
         RoomsArray.store(getApplicationContext());
+        startActivity(new Intent(getApplicationContext(),Makler.class));
     }
     public void editClicked(View view){
         ViewSwitcher viewSwitcherName = findViewById(R.id.switchEditInfo);
@@ -55,6 +65,14 @@ public class MaInfoRoom extends AppCompatActivity {
         name.setText(room.getName());
         numSeats.setText(room.getNumSeats());
         address.setText(room.getAddress());
+        ImageView image = findViewById(R.id.edit_room_images);
+        if(room.getImageFile()==1){
+            image.setImageResource(R.drawable.roomsimage01);
+        }else  if(room.getImageFile()==2){
+            image.setImageResource(R.drawable.roomsimage02);
+        }else if(room.getImageFile()==3){
+            image.setImageResource(R.drawable.roomsimage03);
+        }
         if(room.getOccupied()){
             editAvailability.setText("belegt");
             editAvailability.setTextColor(Color.RED);
