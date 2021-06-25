@@ -66,15 +66,15 @@ public class Makler extends AppCompatActivity {
             imageId = 3;
         }
 
-        if (editName.getText().toString().equals("")){
+        if (editName.getText().toString().length()==0){
             Toast.makeText(this,R.string.ErrorNoNameText,Toast.LENGTH_SHORT).show();
-        } else if (editAddress.getText().toString().equals("")){
+        } else if (editNumSeats.getText().toString().length()==0){
+            Toast.makeText(this, R.string.ErrorNoNumSeats, Toast.LENGTH_SHORT).show();
+        }else if (editAddress.getText().toString().length()==0){
             Toast.makeText(this,R.string.ErrorNoAddress,Toast.LENGTH_SHORT).show();
         } else if (imageId==0){
             Toast.makeText(getApplicationContext(),R.string.ErrorNoPicture,Toast.LENGTH_SHORT).show();
-        } else if (editNumSeats.getText().toString().length()==0){
-            Toast.makeText(this, R.string.ErrorNoNumSeats, Toast.LENGTH_SHORT).show();
-        }else{
+        } else{
             RoomsArray.getInstance().add(new Room(editName.getText().toString(),Integer.parseInt(editNumSeats.getText().toString()),editAddress.getText().toString(),imageId));
             Toast.makeText(this, R.string.SavedText, Toast.LENGTH_SHORT).show();
             RoomsArray.store(getApplicationContext());
