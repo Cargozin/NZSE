@@ -149,7 +149,8 @@
                 app:layout_constraintStart_toEndOf="@+id/showed_room_nametxt0"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                android:layout_marginStart="16dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -178,7 +179,8 @@
                 app:layout_constraintTop_toBottomOf="@id/edit_room_name"
                 app:layout_constraintStart_toEndOf="@id/showed_room_numSeatstxt0"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp"/>
+                android:layout_marginStart="16dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -197,13 +199,14 @@
                 app:layout_constraintTop_toBottomOf="@id/showed_room_adresstxt0"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp"/>
+                android:layout_marginStart="16dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
 
             <TextView
                 android:id="@+id/edit_room_availabilityTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Verfügbarkeit:"
+                android:text="@string/AvailabilityText"
                 android:textSize="20sp"
                 android:layout_margin="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -229,15 +232,53 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/edit_room_images0"
-                android:layout_width="150dp"
-                android:layout_height="249dp"
-                android:layout_marginStart="400dp"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/ic_baseline_add_photo_alternate_24"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edit_room_imagestxt0" />
-
+                android:id="@+id/image01"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_room_imagestxt0"
+                android:src="@drawable/roomsimage01"
+                tools:ignore="ContentDescription" />
+            <ImageView
+                android:id="@+id/image02"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                app:layout_constraintStart_toStartOf="@+id/image01"
+                app:layout_constraintTop_toBottomOf="@+id/image01"
+                android:src="@drawable/roomsimage02"
+                tools:ignore="ContentDescription" />
+            <ImageView
+                android:id="@+id/image03"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                app:layout_constraintStart_toStartOf="@+id/image01"
+                app:layout_constraintTop_toBottomOf="@+id/image02"
+                android:src="@drawable/roomsimage03"
+                tools:ignore="ContentDescription" />
+            <RadioGroup
+                android:id="@+id/imageSwitchMaEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/edit_room_name"
+                app:layout_constraintRight_toLeftOf="@+id/image01"
+                app:layout_constraintTop_toTopOf="@id/image01">
+                <RadioButton
+                    android:id="@+id/radioButtonImage01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"/>
+                <RadioButton
+                    android:id="@+id/radioButtonImage02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"/>
+                <RadioButton
+                    android:id="@+id/radioButtonImage03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"/>
+            </RadioGroup>
             <Button
                 android:id="@+id/maEditSave"
                 android:layout_width="wrap_content"

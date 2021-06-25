@@ -61,7 +61,6 @@ public class MaInfoRoom extends AppCompatActivity {
         ViewSwitcher viewSwitcherName = findViewById(R.id.switchEditInfo);
         viewSwitcherName.showNext();
         Room room = RoomsArray.getInstance().get(getIntent().getIntExtra("Position", -1));
-        ConstraintLayout constraintLayout = viewSwitcherName.findViewById(R.id.maInfoTexts);
         EditText name=findViewById(R.id.edit_room_name),numSeats=findViewById(R.id.edit_room_numSeats),address=findViewById(R.id.edit_room_adress);
         TextView editAvailability = findViewById(R.id.edit_room_availability);
         name.setText(room.getName());
