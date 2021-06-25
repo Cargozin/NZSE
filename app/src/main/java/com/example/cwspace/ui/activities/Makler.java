@@ -68,14 +68,11 @@ public class Makler extends AppCompatActivity {
 
         if (editName.getText().toString().equals("")){
             Toast.makeText(this,R.string.ErrorNoNameText,Toast.LENGTH_SHORT).show();
-        }
-        if (editAddress.getText().toString().equals("")){
+        } else if (editAddress.getText().toString().equals("")){
             Toast.makeText(this,R.string.ErrorNoAddress,Toast.LENGTH_SHORT).show();
-        }
-        if (imageId==0){
+        } else if (imageId==0){
             Toast.makeText(getApplicationContext(),R.string.ErrorNoPicture,Toast.LENGTH_SHORT).show();
-        }
-        if (editNumSeats.getText().toString().length()==0){
+        } else if (editNumSeats.getText().toString().length()==0){
             Toast.makeText(this, R.string.ErrorNoNumSeats, Toast.LENGTH_SHORT).show();
         }else{
             RoomsArray.getInstance().add(new Room(editName.getText().toString(),Integer.parseInt(editNumSeats.getText().toString()),editAddress.getText().toString(),imageId));
@@ -83,6 +80,5 @@ public class Makler extends AppCompatActivity {
             RoomsArray.store(getApplicationContext());
             startActivity(new Intent(getApplicationContext(),Makler.class));
         }
-
     }
 }
