@@ -25,7 +25,7 @@
     <string name="AvailableText">verfügbar</string>
     <string name="OccupiedText">belegt</string>
     <string name="EditText">bearbeiten</string>
-    <string name="DeleteText">lösch</string>
+    <string name="DeleteText">löschen</string>
     <string name="NumberOfRoomsText">Anzahl der Räume</string>
     <string name="ErrorNoNameText">Namensfeld ist leer</string>
     <string name="ErrorNoAddress">Adressfeld ist leer</string>
